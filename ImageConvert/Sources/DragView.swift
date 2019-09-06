@@ -18,7 +18,8 @@ class DragView: NSView {
     // MARK: - Properties
     let NSFilenamesPboardType = NSPasteboard.PasteboardType("NSFilenamesPboardType")
     let allowedFileExtensions = ["jpg", "jpeg", "bmp", "png", "gif"]
-    var fileTypeIsOk = false
+    
+    var fileExtensionOkay = false
     var delegate: DragViewDelegate?
     
     // MARK: - Init
@@ -37,17 +38,17 @@ class DragView: NSView {
     // MARK: - Dragging
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
         if checkFileExtension(drag: sender) {
-            fileTypeIsOk = true
+            fileExtensionOkay = true
             delegate?.dragStarted()
             return .copy
         } else {
-            fileTypeIsOk = false
+            fileExtensionOkay = false
             return []
         }
     }
     
     override func draggingUpdated(_ sender: NSDraggingInfo) -> NSDragOperation {
-        if fileTypeIsOk {
+        if fileExtensionOkay {
             return .copy
         } else {
             return []
