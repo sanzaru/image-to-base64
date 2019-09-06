@@ -68,15 +68,10 @@ class MainViewController: NSViewController, DragViewDelegate {
             updateBase64Content()
             
             dragImage.image = image
-            statusLabel.stringValue = "The base64 code was copied to your clipboard.\nYou may drag another image, now."
-            outputTextField.isHidden = false
-            copyToClipboardButton.isEnabled = true
+            updateViewControls(isError: false)
         } else {
             dragImage.image = NSImage(named: "ErrorIcon")
-            statusLabel.stringValue = "There was an error processing the image."
-            outputTextField.isHidden = true
-            copyToClipboardButton.isEnabled = false
-            charCountLabel.isHidden = true
+            updateViewControls(isError: true)
         }
     }
     
@@ -91,6 +86,22 @@ class MainViewController: NSViewController, DragViewDelegate {
     }
     
     // MARK: - Private methods
+    private func updateViewControls(isError: Bool) {
+        if isError {
+            statusLabel.stringValue = "There was an error processing the image."
+            outputTextField.isHidden = true
+            charCountLabel.isHidden = true
+            copyToClipboardButton.isEnabled = false
+            checkboxDataUrl.isEnabled = false
+            selectFileType.isEnabled = false
+        } else {
+            statusLabel.stringValue = "The base64 code was copied to your clipboard.\nYou may drag another image, now."
+            outputTextField.isHidden = false
+            copyToClipboardButton.isEnabled = true
+            checkboxDataUrl.isEnabled = true
+            selectFileType.isEnabled = true
+        }
+    }
     private func copyToClipBoard() {
         let pasteBoard = NSPasteboard.general
         pasteBoard.clearContents()
