@@ -6,7 +6,28 @@
     },
     {
       "idiom" : "universal",
+      "scale" : "1x",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ]
+    },
+    {
+      "idiom" : "universal",
       "filename" : "error.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "error-dark.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
       "scale" : "2x"
     },
     {

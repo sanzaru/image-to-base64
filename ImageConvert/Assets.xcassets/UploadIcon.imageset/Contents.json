@@ -6,7 +6,28 @@
     },
     {
       "idiom" : "universal",
+      "scale" : "1x",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ]
+    },
+    {
+      "idiom" : "universal",
       "filename" : "DragIcon@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "DragIcon@2x-dark.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
       "scale" : "2x"
     },
     {
