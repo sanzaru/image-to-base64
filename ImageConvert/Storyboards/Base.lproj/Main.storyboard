@@ -176,7 +176,7 @@
                                                 </popUpButtonCell>
                                             </popUpButton>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lyr-zT-f4N">
-                                                <rect key="frame" x="266" y="19" width="122" height="22"/>
+                                                <rect key="frame" x="266.5" y="19" width="122" height="22"/>
                                                 <buttonCell key="cell" type="roundTextured" title="Copy to clipboard" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gTp-aB-2S8">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>

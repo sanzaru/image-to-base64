@@ -122,7 +122,12 @@ class MainViewController: NSViewController, DragViewDelegate {
     }
     
     private func updateBase64Content() {
-        if let content = getBase64StringFromImage() {
+        var format: NSBitmapImageRep.FileType = .png
+        if selectFileType.titleOfSelectedItem == "image/jpg" {
+            format = .jpeg
+        }
+        
+        if let content = ImageConverter.getBase64String(from: image!, format: format, forDataUrl: checkboxDataUrl.state == .on) {
             setTextfieldWith(content: content)
             self.base64code = content
             self.updateCharCountLabel()
@@ -138,34 +143,5 @@ class MainViewController: NSViewController, DragViewDelegate {
         } else {
             charCountLabel.isHidden = true
         }
-    }
-    
-    private func getBase64StringFromImage() -> String? {
-        var format: NSBitmapImageRep.FileType = .png
-        
-        if selectFileType.titleOfSelectedItem == "image/jpg" {
-            format = .jpeg
-        }
-        
-        guard let base64Output = image?.toBase64String(forDataUrl: checkboxDataUrl.state == .on, imageFormat: format) else {
-            return nil
-        }
-        
-        return base64Output
-    }
-}
-
-// MARK: - Extension: NSImage
-extension NSImage {
-    func toBase64String(forDataUrl: Bool, imageFormat: NSBitmapImageRep.FileType) -> String? {
-        guard
-            let bits = self.representations.first as? NSBitmapImageRep,
-            let data = bits.representation(using: imageFormat, properties: [:]),
-            let format = imageFormat == .jpeg ? "jpg" : "png"
-            else {
-                return nil
-        }
-        
-        return !forDataUrl ? "\(data.base64EncodedString())" : "data:image/\(format);base64,\(data.base64EncodedString())"
     }
 }
