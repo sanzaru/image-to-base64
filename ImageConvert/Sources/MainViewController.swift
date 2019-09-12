@@ -13,14 +13,14 @@ class MainViewController: NSViewController, DragViewDelegate {
     private var image: NSImage?
     private var base64code: String?
     
-    @IBOutlet weak var dragImage: NSImageView!
-    @IBOutlet weak var dragView: DragView!
-    @IBOutlet weak var statusLabel: NSTextField!
+    @IBOutlet var dragImage: NSImageView!
+    @IBOutlet var dragView: DragView!
+    @IBOutlet var statusLabel: NSTextField!
     @IBOutlet var outputTextField: NSTextView!
-    @IBOutlet weak var checkboxDataUrl: NSButton!
-    @IBOutlet weak var selectFileType: NSPopUpButton!
-    @IBOutlet weak var copyToClipboardButton: NSButton!
-    @IBOutlet weak var charCountLabel: NSTextField!
+    @IBOutlet var checkboxDataUrl: NSButton!
+    @IBOutlet var selectFileType: NSPopUpButton!
+    @IBOutlet var copyToClipboardButton: NSButton!
+    @IBOutlet var charCountLabel: NSTextField!
     
     // MARK: - Main
     override func viewDidLoad() {
