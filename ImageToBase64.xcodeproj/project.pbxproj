@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		680D8265232AD3A6009BDCC3 /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680D8264232AD3A6009BDCC3 /* ImageConverter.swift */; };
+		6849A369232B7BFA00025640 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 6849A367232B7BFA00025640 /* CHANGELOG.md */; };
 		68EB5F39231EC9CC008CC8EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EB5F38231EC9CC008CC8EB /* AppDelegate.swift */; };
 		68EB5F3B231EC9CC008CC8EB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EB5F3A231EC9CC008CC8EB /* MainViewController.swift */; };
 		68EB5F3D231ECA0E008CC8EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EB5F3C231ECA0E008CC8EB /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 
 /* Begin PBXFileReference section */
 		680D8264232AD3A6009BDCC3 /* ImageConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConverter.swift; sourceTree = "<group>"; };
+		6849A367232B7BFA00025640 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		68EB5F35231EC9CC008CC8EB /* ImageToBase64.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageToBase64.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68EB5F38231EC9CC008CC8EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68EB5F3A231EC9CC008CC8EB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				68EB5F3C231ECA0E008CC8EB /* Assets.xcassets */,
 				68EB5F41231ECA0E008CC8EB /* Info.plist */,
 				68EB5F42231ECA0E008CC8EB /* ImageConvert.entitlements */,
+				6849A367232B7BFA00025640 /* CHANGELOG.md */,
 			);
 			path = ImageConvert;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68EB5F3D231ECA0E008CC8EB /* Assets.xcassets in Resources */,
+				6849A369232B7BFA00025640 /* CHANGELOG.md in Resources */,
 				68EB5F40231ECA0E008CC8EB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

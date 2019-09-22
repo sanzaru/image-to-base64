@@ -102,6 +102,7 @@ class MainViewController: NSViewController, DragViewDelegate {
             selectFileType.isEnabled = true
         }
     }
+    
     private func copyToClipBoard() {
         let pasteBoard = NSPasteboard.general
         pasteBoard.clearContents()
@@ -116,29 +117,37 @@ class MainViewController: NSViewController, DragViewDelegate {
     }
     
     private func setTextfieldWith(content: String) {
-        copyToClipBoard()
-        outputTextField.textStorage?.mutableString.setString("")
+        //copyToClipBoard()
+        clearTextfield()
+        
         outputTextField.textStorage?.append(NSAttributedString(string: content, attributes: [NSAttributedString.Key.foregroundColor: NSColor.textColor] as [NSAttributedString.Key: Any]))
     }
     
     private func updateBase64Content() {
-        var format: NSBitmapImageRep.FileType = .png
-        if selectFileType.titleOfSelectedItem == "image/jpg" {
-            format = .jpeg
-        }
+        let originalTitle = self.title
+        self.title = "Converting..."
         
-        if let content = ImageConverter.getBase64String(from: image!, format: format, forDataUrl: checkboxDataUrl.state == .on) {
-            setTextfieldWith(content: content)
-            self.base64code = content
-            self.updateCharCountLabel()
+        dump("UPDATE")
+        
+        DispatchQueue.main.async {
+            var format: NSBitmapImageRep.FileType = .png
+            if self.selectFileType.titleOfSelectedItem == "image/jpg" {
+                format = .jpeg
+            }
+            
+            if let content = ImageConverter.getBase64String(from: self.image!, format: format, forDataUrl: self.checkboxDataUrl.state == .on) {
+                self.setTextfieldWith(content: content)
+                self.base64code = content
+                self.updateCharCountLabel()
+                self.title = originalTitle
+                dump("UPDATE DONE")
+            }
         }
     }
     
     private func updateCharCountLabel() {
-        if self.base64code != nil {
-            if let content = self.base64code {
-                charCountLabel.stringValue = "\(content.count) bytes | \(content.count / 1024) kB"
-            }
+        if let content = self.base64code {
+            charCountLabel.stringValue = "\(content.count) bytes | \(content.count / 1024) kB"
             charCountLabel.isHidden = false
         } else {
             charCountLabel.isHidden = true
