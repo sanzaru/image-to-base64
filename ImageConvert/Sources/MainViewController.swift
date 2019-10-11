@@ -95,7 +95,7 @@ class MainViewController: NSViewController, DragViewDelegate {
             checkboxDataUrl.isEnabled = false
             selectFileType.isEnabled = false
         } else {
-            statusLabel.stringValue = "The base64 code was copied to your clipboard.\nYou may drag another image, now."
+            statusLabel.stringValue = "You may drag another image, now."
             outputTextField.isHidden = false
             copyToClipboardButton.isEnabled = true
             checkboxDataUrl.isEnabled = true
@@ -127,8 +127,6 @@ class MainViewController: NSViewController, DragViewDelegate {
         let originalTitle = self.title
         self.title = "Converting..."
         
-        dump("UPDATE")
-        
         DispatchQueue.main.async {
             var format: NSBitmapImageRep.FileType = .png
             if self.selectFileType.titleOfSelectedItem == "image/jpg" {
@@ -140,7 +138,6 @@ class MainViewController: NSViewController, DragViewDelegate {
                 self.base64code = content
                 self.updateCharCountLabel()
                 self.title = originalTitle
-                dump("UPDATE DONE")
             }
         }
     }

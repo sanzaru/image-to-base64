@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14868"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -108,7 +108,7 @@
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="DropIcon" id="ErJ-vw-kux"/>
                                     </imageView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iAq-sj-ecX">
-                                        <rect key="frame" x="116" y="122" width="166" height="26"/>
+                                        <rect key="frame" x="116" y="127" width="166" height="21"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Drag your image here" id="Omb-tG-Rmf">
                                             <font key="font" size="16" name="Chalkboard"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -134,7 +134,7 @@
                                 <rect key="frame" x="398" y="0.0" width="408" height="462"/>
                                 <subviews>
                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="MEI-ie-mrg">
-                                        <rect key="frame" x="46" y="194" width="316" height="74"/>
+                                        <rect key="frame" x="46" y="201" width="316" height="60"/>
                                         <textFieldCell key="cell" alignment="center" title="The base64 code will be shown here" drawsBackground="YES" id="35P-IP-LzZ">
                                             <font key="font" size="23" name="Chalkboard"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -148,7 +148,7 @@
                                                 <rect key="frame" x="0.0" y="65" width="408" height="5"/>
                                             </box>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="N8c-BO-Nkg">
-                                                <rect key="frame" x="18" y="45" width="55" height="17"/>
+                                                <rect key="frame" x="18" y="46" width="55" height="16"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Options" id="QZy-ld-26e">
                                                     <font key="font" metaFont="systemBold"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -156,7 +156,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FlM-Od-MOG">
-                                                <rect key="frame" x="18" y="21" width="126" height="18"/>
+                                                <rect key="frame" x="18" y="22" width="126" height="18"/>
                                                 <buttonCell key="cell" type="check" title="Use for data URL" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" inset="2" id="DQq-u1-wPv">
                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                     <font key="font" metaFont="system"/>
