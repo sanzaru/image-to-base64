@@ -77,25 +77,35 @@ class MainViewController: NSViewController, DragViewDelegate {
     
     func dragStarted() {
         dragImage.image = NSImage(named: "UploadIcon")
-        statusLabel.stringValue = "Release the image"
+        statusLabel.stringValue = AppGlobals.statusLabelTexts["ondrag"]!
+    }
+    
+    func dragExit() {
+        if self.image == nil {
+            dragImage.image = NSImage(named: "DropIcon")
+            statusLabel.stringValue = AppGlobals.statusLabelTexts["default"]!
+        } else {
+            dragImage.image = self.image
+            statusLabel.stringValue = AppGlobals.statusLabelTexts["done"]!
+        }
     }
     
     func dragProcessing() {
         clearTextfield()
-        statusLabel.stringValue = "Processing..."
+        statusLabel.stringValue = AppGlobals.statusLabelTexts["processing"]!
     }
     
     // MARK: - Private methods
     private func updateViewControls(isError: Bool) {
         if isError {
-            statusLabel.stringValue = "There was an error processing the image."
+            statusLabel.stringValue = AppGlobals.statusLabelTexts["error"]!
             outputTextField.isHidden = true
             charCountLabel.isHidden = true
             copyToClipboardButton.isEnabled = false
             checkboxDataUrl.isEnabled = false
             selectFileType.isEnabled = false
         } else {
-            statusLabel.stringValue = "You may drag another image, now."
+            statusLabel.stringValue = AppGlobals.statusLabelTexts["done"]!
             outputTextField.isHidden = false
             copyToClipboardButton.isEnabled = true
             checkboxDataUrl.isEnabled = true
@@ -117,16 +127,12 @@ class MainViewController: NSViewController, DragViewDelegate {
     }
     
     private func setTextfieldWith(content: String) {
-        //copyToClipBoard()
         clearTextfield()
         
         outputTextField.textStorage?.append(NSAttributedString(string: content, attributes: [NSAttributedString.Key.foregroundColor: NSColor.textColor] as [NSAttributedString.Key: Any]))
     }
     
     private func updateBase64Content() {
-        let originalTitle = self.title
-        self.title = "Converting..."
-        
         DispatchQueue.main.async {
             var format: NSBitmapImageRep.FileType = .png
             if self.selectFileType.titleOfSelectedItem == "image/jpg" {
@@ -137,7 +143,6 @@ class MainViewController: NSViewController, DragViewDelegate {
                 self.setTextfieldWith(content: content)
                 self.base64code = content
                 self.updateCharCountLabel()
-                self.title = originalTitle
             }
         }
     }

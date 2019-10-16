@@ -2,6 +2,8 @@
 
 v1.0.1
 ----------
+    - Fixed drag handling
+    - Automatic copy to clipboard deactivated
     - Added dark mode image assets
     - Better outlets
     - Encapsulated converter functionality
