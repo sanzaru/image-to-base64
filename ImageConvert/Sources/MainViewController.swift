@@ -77,31 +77,42 @@ class MainViewController: NSViewController, DragViewDelegate {
     
     func dragStarted() {
         dragImage.image = NSImage(named: "UploadIcon")
-        statusLabel.stringValue = "Release the image"
+        statusLabel.stringValue = AppGlobals.statusLabelTexts["ondrag"]!
+    }
+    
+    func dragExit() {
+        if self.image == nil {
+            dragImage.image = NSImage(named: "DropIcon")
+            statusLabel.stringValue = AppGlobals.statusLabelTexts["default"]!
+        } else {
+            dragImage.image = self.image
+            statusLabel.stringValue = AppGlobals.statusLabelTexts["done"]!
+        }
     }
     
     func dragProcessing() {
         clearTextfield()
-        statusLabel.stringValue = "Processing..."
+        statusLabel.stringValue = AppGlobals.statusLabelTexts["processing"]!
     }
     
     // MARK: - Private methods
     private func updateViewControls(isError: Bool) {
         if isError {
-            statusLabel.stringValue = "There was an error processing the image."
+            statusLabel.stringValue = AppGlobals.statusLabelTexts["error"]!
             outputTextField.isHidden = true
             charCountLabel.isHidden = true
             copyToClipboardButton.isEnabled = false
             checkboxDataUrl.isEnabled = false
             selectFileType.isEnabled = false
         } else {
-            statusLabel.stringValue = "The base64 code was copied to your clipboard.\nYou may drag another image, now."
+            statusLabel.stringValue = AppGlobals.statusLabelTexts["done"]!
             outputTextField.isHidden = false
             copyToClipboardButton.isEnabled = true
             checkboxDataUrl.isEnabled = true
             selectFileType.isEnabled = true
         }
     }
+    
     private func copyToClipBoard() {
         let pasteBoard = NSPasteboard.general
         pasteBoard.clearContents()
@@ -116,29 +127,29 @@ class MainViewController: NSViewController, DragViewDelegate {
     }
     
     private func setTextfieldWith(content: String) {
-        copyToClipBoard()
-        outputTextField.textStorage?.mutableString.setString("")
+        clearTextfield()
+        
         outputTextField.textStorage?.append(NSAttributedString(string: content, attributes: [NSAttributedString.Key.foregroundColor: NSColor.textColor] as [NSAttributedString.Key: Any]))
     }
     
     private func updateBase64Content() {
-        var format: NSBitmapImageRep.FileType = .png
-        if selectFileType.titleOfSelectedItem == "image/jpg" {
-            format = .jpeg
-        }
-        
-        if let content = ImageConverter.getBase64String(from: image!, format: format, forDataUrl: checkboxDataUrl.state == .on) {
-            setTextfieldWith(content: content)
-            self.base64code = content
-            self.updateCharCountLabel()
+        DispatchQueue.main.async {
+            var format: NSBitmapImageRep.FileType = .png
+            if self.selectFileType.titleOfSelectedItem == "image/jpg" {
+                format = .jpeg
+            }
+            
+            if let content = ImageConverter.getBase64String(from: self.image!, format: format, forDataUrl: self.checkboxDataUrl.state == .on) {
+                self.setTextfieldWith(content: content)
+                self.base64code = content
+                self.updateCharCountLabel()
+            }
         }
     }
     
     private func updateCharCountLabel() {
-        if self.base64code != nil {
-            if let content = self.base64code {
-                charCountLabel.stringValue = "\(content.count) bytes | \(content.count / 1024) kB"
-            }
+        if let content = self.base64code {
+            charCountLabel.stringValue = "\(content.count) bytes | \(content.count / 1024) kB"
             charCountLabel.isHidden = false
         } else {
             charCountLabel.isHidden = true

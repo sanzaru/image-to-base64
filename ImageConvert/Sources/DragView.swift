@@ -10,6 +10,7 @@ import Cocoa
 
 protocol DragViewDelegate {
     func dragStarted()
+    func dragExit()
     func dragProcessing()
     func dragViewEnded(didDragFileWith URL: NSURL)
 }
@@ -53,6 +54,10 @@ class DragView: NSView {
         } else {
             return []
         }
+    }
+    
+    override func draggingExited(_ sender: NSDraggingInfo?) {
+        delegate?.dragExit()
     }
     
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {

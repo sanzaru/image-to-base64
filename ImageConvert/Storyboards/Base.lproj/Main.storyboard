@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14868"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -73,7 +73,7 @@
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="ImageToBase64" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" fullSizeContentView="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <rect key="contentRect" x="196" y="240" width="806" height="462"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                         <connections>
@@ -108,7 +108,7 @@
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="DropIcon" id="ErJ-vw-kux"/>
                                     </imageView>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iAq-sj-ecX">
-                                        <rect key="frame" x="116" y="122" width="166" height="26"/>
+                                        <rect key="frame" x="116" y="127" width="166" height="21"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Drag your image here" id="Omb-tG-Rmf">
                                             <font key="font" size="16" name="Chalkboard"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -134,7 +134,7 @@
                                 <rect key="frame" x="398" y="0.0" width="408" height="462"/>
                                 <subviews>
                                     <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="MEI-ie-mrg">
-                                        <rect key="frame" x="46" y="194" width="316" height="74"/>
+                                        <rect key="frame" x="46" y="201" width="316" height="60"/>
                                         <textFieldCell key="cell" alignment="center" title="The base64 code will be shown here" drawsBackground="YES" id="35P-IP-LzZ">
                                             <font key="font" size="23" name="Chalkboard"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -148,7 +148,7 @@
                                                 <rect key="frame" x="0.0" y="65" width="408" height="5"/>
                                             </box>
                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="N8c-BO-Nkg">
-                                                <rect key="frame" x="18" y="45" width="55" height="17"/>
+                                                <rect key="frame" x="18" y="46" width="55" height="16"/>
                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Options" id="QZy-ld-26e">
                                                     <font key="font" metaFont="systemBold"/>
                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -156,7 +156,7 @@
                                                 </textFieldCell>
                                             </textField>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FlM-Od-MOG">
-                                                <rect key="frame" x="18" y="21" width="126" height="18"/>
+                                                <rect key="frame" x="18" y="22" width="126" height="18"/>
                                                 <buttonCell key="cell" type="check" title="Use for data URL" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" inset="2" id="DQq-u1-wPv">
                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -176,7 +176,7 @@
                                                 </popUpButtonCell>
                                             </popUpButton>
                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lyr-zT-f4N">
-                                                <rect key="frame" x="266.5" y="19" width="122" height="22"/>
+                                                <rect key="frame" x="266" y="19" width="122" height="22"/>
                                                 <buttonCell key="cell" type="roundTextured" title="Copy to clipboard" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" enabled="NO" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="gTp-aB-2S8">
                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                     <font key="font" metaFont="system"/>
@@ -204,18 +204,18 @@
                                             <constraint firstAttribute="bottom" secondItem="aPb-Ty-xt1" secondAttribute="bottom" constant="20" symbolic="YES" id="qaD-oT-mB4"/>
                                         </constraints>
                                     </customView>
-                                    <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIn-3P-ekb">
-                                        <rect key="frame" x="0.0" y="98" width="408" height="326"/>
+                                    <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIn-3P-ekb">
+                                        <rect key="frame" x="0.0" y="98" width="408" height="364"/>
                                         <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="lcp-mx-Aje">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="326"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="408" height="364"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <textView importsGraphics="NO" richText="NO" verticallyResizable="YES" smartInsertDelete="YES" id="enK-2L-U8t">
-                                                    <rect key="frame" x="0.0" y="0.0" width="393" height="326"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="408" height="364"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    <size key="minSize" width="393" height="326"/>
+                                                    <size key="minSize" width="408" height="364"/>
                                                     <size key="maxSize" width="413" height="10000000"/>
                                                     <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                 </textView>
@@ -225,8 +225,8 @@
                                             <rect key="frame" x="-100" y="-100" width="240" height="16"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
-                                        <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Jqa-6f-xx1">
-                                            <rect key="frame" x="393" y="0.0" width="15" height="326"/>
+                                        <scroller key="verticalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="Jqa-6f-xx1">
+                                            <rect key="frame" x="393" y="0.0" width="15" height="364"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </scroller>
                                     </scrollView>
@@ -244,7 +244,7 @@
                                     <constraint firstAttribute="trailing" secondItem="JIn-3P-ekb" secondAttribute="trailing" id="3u5-Rn-2RS"/>
                                     <constraint firstItem="v4S-Nq-xTO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cE3-Y7-499" secondAttribute="leading" constant="20" symbolic="YES" id="8rh-4x-Jh6"/>
                                     <constraint firstAttribute="bottom" secondItem="AZ0-In-s0f" secondAttribute="bottom" id="Bvz-f0-lrW"/>
-                                    <constraint firstItem="JIn-3P-ekb" firstAttribute="top" secondItem="cE3-Y7-499" secondAttribute="top" constant="38" id="GBi-uI-usz"/>
+                                    <constraint firstItem="JIn-3P-ekb" firstAttribute="top" secondItem="cE3-Y7-499" secondAttribute="top" id="GBi-uI-usz"/>
                                     <constraint firstAttribute="trailing" secondItem="v4S-Nq-xTO" secondAttribute="trailing" constant="10" id="GaR-GX-R5G"/>
                                     <constraint firstItem="MEI-ie-mrg" firstAttribute="centerY" secondItem="cE3-Y7-499" secondAttribute="centerY" id="Jdh-JM-pTH"/>
                                     <constraint firstItem="MEI-ie-mrg" firstAttribute="centerX" secondItem="AZ0-In-s0f" secondAttribute="centerX" id="L6Y-Ba-ktU"/>
