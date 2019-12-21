@@ -9,13 +9,15 @@
 import Cocoa
 
 class AppGlobals: NSObject {
+    /// Constant holding the default notification display time
+    static let notificationDisplayDuration: Double = 10.0
     
-    // MARK: - Status label texts
+    /// Status label texts
     static let statusLabelTexts = [
-        "default": "Drag your image here",
+        "default": "Drag your image",
         "ondrag": "Release the image",
         "error": "There was an error processing the image.",
-        "processing": "Processing",
-        "done": "You may drag another image, now."
+        "processing": "Please wait...",
+        "done": "Drag another image"
     ]
 }

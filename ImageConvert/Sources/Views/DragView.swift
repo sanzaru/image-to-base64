@@ -15,19 +15,28 @@ protocol DragViewDelegate {
     func dragViewEnded(didDragFileWith URL: NSURL)
 }
 
+@IBDesignable
 class DragView: NSView {
     // MARK: - Properties
     let NSFilenamesPboardType = NSPasteboard.PasteboardType("NSFilenamesPboardType")
-    let allowedFileExtensions = ["jpg", "jpeg", "bmp", "png", "gif"]
+    let allowedFileExtensions = ["jpg", "jpeg", "bmp", "png", "gif", "heic"]
     
     var fileExtensionOkay = false
     var delegate: DragViewDelegate?
     
+    @IBOutlet var mainView: NSView!
+    
     // MARK: - Init
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setup()
+    }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
+        setup()
         
-        registerForDraggedTypes([NSPasteboard.PasteboardType(kUTTypeFileURL as String),
+       registerForDraggedTypes([NSPasteboard.PasteboardType(kUTTypeFileURL as String),
                                  NSPasteboard.PasteboardType(kUTTypeItem as String)])
     }
     
@@ -35,11 +44,11 @@ class DragView: NSView {
         super.draw(dirtyRect)
     }
     
-    
     // MARK: - Dragging
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
         if checkFileExtension(drag: sender) {
-            fileExtensionOkay = true
+            fileExtensionOkay = true                    
+            
             delegate?.dragStarted()
             return .copy
         } else {
@@ -63,9 +72,8 @@ class DragView: NSView {
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
         delegate?.dragProcessing()
         
-        if let board = sender.draggingPasteboard.propertyList(forType: NSFilenamesPboardType) as? NSArray,
-            let imagePath = board[0] as? String {
-            delegate?.dragViewEnded(didDragFileWith: NSURL(fileURLWithPath: imagePath))
+        if let url = getFileUrlFrom(info: sender) {
+            delegate?.dragViewEnded(didDragFileWith: url)
             return true
         }
         
@@ -73,14 +81,27 @@ class DragView: NSView {
     }
     
     // MARK: - Private methods
-    private func checkFileExtension(drag: NSDraggingInfo) -> Bool {
-        if let board = drag.draggingPasteboard.propertyList(forType: NSFilenamesPboardType) as? NSArray,
+    private func setup() {
+        let bundle = Bundle(for: type(of: self))
+        let nib = NSNib(nibNamed: .init(String(describing: type(of: self))), bundle: bundle)!
+        nib.instantiate(withOwner: self, topLevelObjects: nil)
+
+        addSubview(mainView)
+    }
+    
+    private func getFileUrlFrom(info: NSDraggingInfo) -> NSURL? {
+        if let board = info.draggingPasteboard.propertyList(forType: NSFilenamesPboardType) as? NSArray,
             let path = board[0] as? String {
-            let url = NSURL(fileURLWithPath: path)
-            
-            if let fileExtension = url.pathExtension?.lowercased() {
+            return NSURL(fileURLWithPath: path)
+        }
+        
+        return nil
+    }
+    
+    private func checkFileExtension(drag: NSDraggingInfo) -> Bool {
+        if let url = getFileUrlFrom(info: drag),
+            let fileExtension = url.pathExtension?.lowercased() {
                 return allowedFileExtensions.contains(fileExtension)
-            }
         }
         
         return false
