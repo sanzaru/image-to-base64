@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NotificationView" customModule="ImageToBase64" customModuleProvider="target">
+            <connections>
+                <outlet property="mainView" destination="c22-O7-iKe" id="pxY-ax-bs8"/>
+                <outlet property="messageLabel" destination="cso-fK-xc0" id="bbT-0h-Mpk"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="48"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <box boxType="custom" cornerRadius="4" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="gJ9-OY-QbD">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="48"/>
+                    <view key="contentView" id="kU2-gX-70V">
+                        <rect key="frame" x="1" y="1" width="398" height="46"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView distribution="equalSpacing" orientation="horizontal" alignment="centerY" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHA-Im-TfG">
+                                <rect key="frame" x="20" y="13" width="358" height="20"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cso-fK-xc0">
+                                        <rect key="frame" x="-2" y="2" width="41" height="16"/>
+                                        <textFieldCell key="cell" lineBreakMode="clipping" title="Label " id="8ED-Lh-GjC">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aEc-NU-TmV">
+                                        <rect key="frame" x="332" y="-7" width="32" height="31"/>
+                                        <buttonCell key="cell" type="round" bezelStyle="circular" image="NSStopProgressTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lRq-OH-04C">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="closeButtonClicked:" target="-2" id="vdR-ED-gVX"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="bHA-Im-TfG" secondAttribute="trailing" constant="20" symbolic="YES" id="3qm-yA-bWT"/>
+                            <constraint firstItem="bHA-Im-TfG" firstAttribute="centerY" secondItem="kU2-gX-70V" secondAttribute="centerY" id="KM6-xy-jM0"/>
+                            <constraint firstItem="bHA-Im-TfG" firstAttribute="leading" secondItem="kU2-gX-70V" secondAttribute="leading" constant="20" symbolic="YES" id="jbv-Rt-w7Z"/>
+                        </constraints>
+                    </view>
+                    <color key="borderColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                    <color key="fillColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="gJ9-OY-QbD" secondAttribute="trailing" id="2ms-kt-tk3"/>
+                <constraint firstAttribute="bottom" secondItem="gJ9-OY-QbD" secondAttribute="bottom" id="7mD-Kj-zJr"/>
+                <constraint firstItem="gJ9-OY-QbD" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="8bE-I6-e0Z"/>
+                <constraint firstItem="gJ9-OY-QbD" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="cBl-JA-hZM"/>
+            </constraints>
+            <point key="canvasLocation" x="57" y="13"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSStopProgressTemplate" width="11" height="11"/>
+    </resources>
+</document>

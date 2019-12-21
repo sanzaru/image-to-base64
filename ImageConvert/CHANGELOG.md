@@ -1,5 +1,12 @@
 #  Changelog
 
+v2.0.0
+----------
+    - New UI interface
+    - HEIF image format support
+    - Notification view implementation
+    
+
 v1.0.1
 ----------
     - Fixed drag handling
