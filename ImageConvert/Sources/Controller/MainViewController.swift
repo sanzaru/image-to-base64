@@ -74,7 +74,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate {
      Called when copiedToClipboard event is fired inside code view
      */
     func copiedToClipboard() {
-        notificationView?.showWith(message: "Copied to clipboard", duration: AppGlobals.notificationDisplayDuration)
+        notificationView?.show(with: "Copied to clipboard", duration: AppGlobals.notificationDisplayDuration)
     }
 
     // MARK: - DragViewDelegate

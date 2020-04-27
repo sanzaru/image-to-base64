@@ -23,7 +23,7 @@ class NotificationView: NSView {
         setup()
     }
     
-    func showWith(message: String, duration: Double = 10.0) {
+    func show(with message: String, duration: Double = 10.0) {
         messageLabel.stringValue = message
         
         NSAnimationContext.runAnimationGroup({ context in
