@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,47 +12,55 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="ImageToBase64" id="1Xt-HY-uBw">
+                            <menuItem title="ImageToBase64" id="zh6-eE-dgr">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="ImageToBase64" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="ImageToBase64" systemMenu="apple" id="7ZW-yO-zAd">
                                     <items>
-                                        <menuItem title="About ImageToBase64" id="5kV-Vb-QxS">
+                                        <menuItem title="About ImageToBase64" id="w7u-vZ-mct">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
+                                                <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="6ba-HN-CBS"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="VOq-y0-SEH"/>
-                                        <menuItem title="Preferences…" keyEquivalent="," id="BOF-NM-1cW"/>
-                                        <menuItem isSeparatorItem="YES" id="wFC-TO-SCJ"/>
-                                        <menuItem title="Services" id="NMo-om-nkz">
+                                        <menuItem isSeparatorItem="YES" id="8d0-Zh-QzQ"/>
+                                        <menuItem title="Preferences…" keyEquivalent="," id="GNA-PX-nMm"/>
+                                        <menuItem isSeparatorItem="YES" id="0wg-VN-uB5"/>
+                                        <menuItem title="Services" id="gOe-h0-Iuy">
                                             <modifierMask key="keyEquivalentModifierMask"/>
-                                            <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
+                                            <menu key="submenu" title="Services" systemMenu="services" id="wVb-hn-buf"/>
                                         </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide ImageToBase64" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem isSeparatorItem="YES" id="3dF-zF-Uju"/>
+                                        <menuItem title="Hide ImageToBase64" keyEquivalent="h" id="QFW-Df-mQc">
                                             <connections>
-                                                <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
+                                                <action selector="hide:" target="Ady-hI-5gd" id="VV2-SQ-m7T"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Hide Others" keyEquivalent="h" id="Vdr-fp-XzO">
+                                        <menuItem title="Hide Others" keyEquivalent="h" id="XiQ-2n-Y0a">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                             <connections>
-                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="VT4-aY-XCT"/>
+                                                <action selector="hideOtherApplications:" target="Ady-hI-5gd" id="JfG-bE-n0I"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Show All" id="Kd2-mp-pUS">
+                                        <menuItem title="Show All" id="nSm-Jk-TU1">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
-                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="Dhg-Le-xox"/>
+                                                <action selector="unhideAllApplications:" target="Ady-hI-5gd" id="6rD-7q-TNE"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit ImageToBase64" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem isSeparatorItem="YES" id="gw2-mJ-qOe"/>
+                                        <menuItem title="Quit ImageToBase64" keyEquivalent="q" id="Kp5-0q-9ab">
                                             <connections>
-                                                <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
+                                                <action selector="terminate:" target="Ady-hI-5gd" id="lal-Pa-zEs"/>
                                             </connections>
                                         </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Edit" id="1Xt-HY-uBw">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Edit" systemMenu="apple" id="uQy-DD-JDr">
+                                    <items>
+                                        <menuItem title="Copy" keyEquivalent="c" id="5kV-Vb-QxS"/>
                                     </items>
                                 </menu>
                             </menuItem>
