@@ -19,7 +19,7 @@ protocol DragViewDelegate {
 class DragView: NSView {
     // MARK: - Properties
     let NSFilenamesPboardType = NSPasteboard.PasteboardType("NSFilenamesPboardType")
-    let allowedFileExtensions = ["jpg", "jpeg", "bmp", "png", "gif", "heic"]
+    let allowedFileExtensions = ["jpg", "jpeg", "bmp", "png", "gif", "heic", "svg"]
     
     var fileExtensionOkay = false
     var delegate: DragViewDelegate?
@@ -35,16 +35,13 @@ class DragView: NSView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
-        
-       registerForDraggedTypes([NSPasteboard.PasteboardType(kUTTypeFileURL as String),
-                                 NSPasteboard.PasteboardType(kUTTypeItem as String)])
     }
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
     }
     
-    // MARK: - Dragging
+    // MARK: - Dragging overrides
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
         if checkFileExtension(drag: sender) {
             fileExtensionOkay = true                    
@@ -82,6 +79,9 @@ class DragView: NSView {
     
     // MARK: - Private methods
     private func setup() {
+        registerForDraggedTypes([NSPasteboard.PasteboardType(kUTTypeFileURL as String),
+                                 NSPasteboard.PasteboardType(kUTTypeItem as String)])
+        
         let bundle = Bundle(for: type(of: self))
         let nib = NSNib(nibNamed: .init(String(describing: type(of: self))), bundle: bundle)!
         nib.instantiate(withOwner: self, topLevelObjects: nil)

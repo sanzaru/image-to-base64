@@ -60,11 +60,8 @@ class CodeView: NSView {
     }
     
     @IBAction func copyToClipboardClicked(_ sender: NSButton) {
-        let pasteBoard = NSPasteboard.general
-        pasteBoard.clearContents()
-        
         if let content = self.base64code {
-            pasteBoard.setString(content, forType: .string)
+            AppGlobals.copyToClipboard(content: content)
         }
         
         if self.delegate?.copiedToClipboard != nil {
@@ -77,6 +74,10 @@ class CodeView: NSView {
     }
     
     // MARK: - Public methods
+    func getContent() -> String {
+        return self.base64code ?? ""
+    }
+    
     func clearTextview() {
         self.outputTextField.textStorage?.mutableString.setString("")
     }
@@ -93,7 +94,7 @@ class CodeView: NSView {
         return self.checkboxDataUrl.state
     }
     
-    func updateViewControls(isError: Bool) {
+    func updateViewControls(isError: Bool, isSvg: Bool = false) {
         if isError {
             outputTextField.isHidden = true
             charCountLabel.isHidden = true
@@ -105,6 +106,10 @@ class CodeView: NSView {
             copyToClipboardButton.isEnabled = true
             checkboxDataUrl.isEnabled = true
             selectFileType.isEnabled = true
+        }
+        
+        if let menuitem = selectFileType.menu?.item(withTitle: "image/svg+xml") {
+            menuitem.isHidden = !isSvg            
         }
     }
  
