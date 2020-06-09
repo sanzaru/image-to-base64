@@ -9,30 +9,36 @@
 import Cocoa
 
 class CodeModel {
-    private var rawCode: String
+    private var rawBase64Code: String
     
     init(code: String) {
-        self.rawCode = code
+        self.rawBase64Code = code
     }
     
-    func getCode(forDataUrl: Bool, type: NSBitmapImageRep.FileType) -> String {
+    func getCode(forDataUrl: Bool, type: ImageConverter.FileType) -> String {
         if forDataUrl {
             let prefix = self.getPrefix(type: type)
-            return "data:\(prefix);base64,\(rawCode)"
+            return "data:\(prefix);base64,\(rawBase64Code)"
         }
         
-        return rawCode
+        return rawBase64Code
     }
     
     func clear() {
-        rawCode = ""
+        rawBase64Code = ""
     }
     
-    private func getPrefix(type: NSBitmapImageRep.FileType) -> String {
-        if type == .jpeg {
+    private func getPrefix(type: ImageConverter.FileType) -> String {
+        switch type {
+        case .jpeg:
             return "image/jpg"
+            
+        case .png:
+            return "image/png"
+            
+        case .svg:
+            return "image/svg+xml"
         }
         
-        return "image/png"
     }
 }

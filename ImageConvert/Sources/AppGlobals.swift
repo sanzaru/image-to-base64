@@ -16,8 +16,15 @@ class AppGlobals: NSObject {
     static let statusLabelTexts = [
         "default": "Drag your image",
         "ondrag": "Release the image",
-        "error": "There was an error processing the image.",
+        "error": "Error processing the image. Drop another one.",
         "processing": "Please wait...",
         "done": "Drag another image"
     ]
+    
+    
+    static func copyToClipboard(content: String) {
+        let pasteBoard = NSPasteboard.general
+        pasteBoard.clearContents()
+        pasteBoard.setString(content, forType: .string)
+    }
 }

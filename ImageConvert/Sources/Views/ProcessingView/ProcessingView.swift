@@ -12,7 +12,6 @@ import Cocoa
 class ProcessingView: NSView {
     @IBOutlet var mainView: NSView!
     
-    
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
