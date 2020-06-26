@@ -34,6 +34,10 @@ class NotificationView: NSView {
         })
     }
     
+    func close() {
+        self.alphaValue = 0
+    }
+    
     @IBAction func closeButtonClicked(_ sender: Any) {
         self.hide()
     }
