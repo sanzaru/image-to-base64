@@ -37,6 +37,14 @@ class DimensionFormViewController: NSViewController {
         labelError.isHidden = true
     }
     
+    /// Handle return key presses
+    /// - Parameter event: The event with the key code to check
+    override func keyUp(with event: NSEvent) {
+        if event.keyCode == 36 {
+            saveDimensions()
+        }
+    }
+    
     /// Action triggered when cancel button is clicked
     /// - Parameter sender: The button element
     @IBAction func onCancel(_ sender: NSButton) {
@@ -47,6 +55,22 @@ class DimensionFormViewController: NSViewController {
     /// Action triggered when save button is clicked
     /// - Parameter sender: The button element
     @IBAction func onSave(_ sender: NSButton) {
+        saveDimensions(sender)
+    }
+    
+    
+    // MARK: - Private methods
+    
+    /// Show the error label with given message
+    /// - Parameter message: The message to show
+    private func showError(message: String) {
+        labelError.stringValue = message
+        labelError.isHidden = false
+    }
+    
+    /// Save the given dimensions and close the dialog
+    /// - Parameter sender: Optional sender parameter, if method is triggered by button
+    private func saveDimensions(_ sender: NSButton? = nil) {
         labelError.isHidden = true
         
         guard let w = Int(textfieldWidth.stringValue) else {
@@ -66,18 +90,8 @@ class DimensionFormViewController: NSViewController {
                 showError(message: "Error: Values must be greater than 0.")
             } else {
                 delegate?.dimensionFormViewSave(w: CGFloat(w), h: CGFloat(h))
-                dismiss(sender)
+                dismiss(sender)                
             }
         }
-    }
-    
-    
-    // MARK: - Private methods
-    
-    /// Show the error label with given message
-    /// - Parameter message: The message to show
-    private func showError(message: String) {
-        labelError.stringValue = message
-        labelError.isHidden = false
     }
 }

@@ -79,6 +79,10 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
         codeModel?.clear()
         codeView.clearTextview()
         
+        if notificationView != nil {
+            notificationView!.close()
+        }
+        
         codeView.isHidden = true
         dragView.isHidden = false
         dragInfoView.isHidden = false
@@ -86,7 +90,9 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     
     /// Handler for copiedToClipboard event
     func copiedToClipboard() {
-        notificationView?.show(with: "Copied to clipboard", duration: AppGlobals.notificationDisplayDuration)
+        if notificationView != nil {
+            notificationView!.show(with: "Copied to clipboard", duration: AppGlobals.notificationDisplayDuration)
+        }
     }
     
     // MARK: - DragViewDelegate
@@ -99,6 +105,10 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     
     /// Called when dragging is started
     func dragStarted() {
+        if notificationView != nil {
+            notificationView!.close()
+        }
+        
         dragImage.image = NSImage(named: "UploadIcon")
         setStatusLabel(to: .ondrag)
     }
@@ -185,7 +195,9 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     
     /// Show an error message inside the notification view and reset the drag view
     private func setError() {
-        notificationView?.show(with: "There was an error processing the image. Try another.", duration: AppGlobals.notificationDisplayDuration)
+        if notificationView != nil {
+            notificationView!.show(with: "There was an error processing the image. Try another.", duration: AppGlobals.notificationDisplayDuration)
+        }
         
         resetDragViewStatus()
     }
@@ -273,7 +285,10 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
                     self.dragInfoView.isHidden.toggle()
                     self.codeView.isHidden.toggle()
                 } else {
-                    self.notificationView?.show(with: "Error: Invalid image file", duration: AppGlobals.notificationDisplayDuration / 4)
+                    if self.notificationView != nil {
+                        self.notificationView!.show(with: "Error: Invalid image file", duration: AppGlobals.notificationDisplayDuration / 4)
+                    }
+                    
                     self.resetDragViewStatus()
                 }
             }
