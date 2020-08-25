@@ -6,7 +6,7 @@
 //  Copyright © 2019 Martin Albrecht <martin.albrecht@seriousmonkey.de>. All rights reserved.
 //
 //  Licensed under Apache License v2.0
-//s
+//
 
 import Cocoa
 

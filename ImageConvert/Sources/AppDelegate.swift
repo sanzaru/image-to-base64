@@ -5,6 +5,8 @@
 //  Created by Martin on 03.09.19.
 //  Copyright © 2019 seriousmonkey. All rights reserved.
 //
+//  Licensed under Apache License v2.0
+//
 
 import Cocoa
 
