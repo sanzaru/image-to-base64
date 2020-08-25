@@ -20,4 +20,4 @@ More information, screenshots, etc. can be found on: [https://imagetobase64.seri
 
 ## Version
 
-For version information see [CHANGELOG.md](https://github.com/sanzaru/image-to-base64/blob/master/ImageConvert/CHANGELOG.md) file.
+For version information see [CHANGELOG.md](https://github.com/sanzaru/image-to-base64/blob/master/CHANGELOG.md) file.
