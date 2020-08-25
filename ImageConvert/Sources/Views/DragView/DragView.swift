@@ -5,6 +5,8 @@
 //  Created by Martin on 03.09.19.
 //  Copyright © 2019 seriousmonkey. All rights reserved.
 //
+//  Licensed under Apache License v2.0
+//
 
 import Cocoa
 
@@ -44,8 +46,7 @@ class DragView: NSView {
     // MARK: - Dragging overrides
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
         if checkFileExtension(drag: sender) {
-            fileExtensionOkay = true                    
-            
+            fileExtensionOkay = true
             delegate?.dragStarted()
             return .copy
         } else {
@@ -55,11 +56,7 @@ class DragView: NSView {
     }
     
     override func draggingUpdated(_ sender: NSDraggingInfo) -> NSDragOperation {
-        if fileExtensionOkay {
-            return .copy
-        } else {
-            return []
-        }
+        return fileExtensionOkay ? .copy : []
     }
     
     override func draggingExited(_ sender: NSDraggingInfo?) {
@@ -69,7 +66,7 @@ class DragView: NSView {
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
         delegate?.dragProcessing()
         
-        if let url = getFileUrlFrom(info: sender) {
+        if let url = fileUrl(from: sender) {
             delegate?.dragViewEnded(didDragFileWith: url)
             return true
         }
@@ -89,7 +86,7 @@ class DragView: NSView {
         addSubview(mainView)
     }
     
-    private func getFileUrlFrom(info: NSDraggingInfo) -> NSURL? {
+    private func fileUrl(from info: NSDraggingInfo) -> NSURL? {
         if let board = info.draggingPasteboard.propertyList(forType: NSFilenamesPboardType) as? NSArray,
             let path = board[0] as? String {
             return NSURL(fileURLWithPath: path)
@@ -99,7 +96,7 @@ class DragView: NSView {
     }
     
     private func checkFileExtension(drag: NSDraggingInfo) -> Bool {
-        if let url = getFileUrlFrom(info: drag),
+        if let url = fileUrl(from: drag),
             let fileExtension = url.pathExtension?.lowercased() {
                 return allowedFileExtensions.contains(fileExtension)
         }

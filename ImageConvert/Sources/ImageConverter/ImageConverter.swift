@@ -5,6 +5,8 @@
 //  Created by Martin Albrecht on 12.09.19.
 //  Copyright © 2019 Martin Albrecht <martin.albrecht@seriousmonkey.de>. All rights reserved.
 //
+//  Licensed under Apache License v2.0
+//
 
 import Cocoa
 import SVGKit
@@ -66,10 +68,10 @@ final class ImageConverter: NSObject {
 
 // MARK: - Extension: NSImage
 extension NSImage {
-    func toBase64String(imageFormat: ImageConverter.FileType) -> String? {
+    func toBase64String(from type: ImageConverter.FileType) -> String? {
         guard
             let bits = self.representations.first as? NSBitmapImageRep,
-            let format = ImageConverter.imageFileType(from: imageFormat),
+            let format = ImageConverter.imageFileType(from: type),
             let data = bits.representation(using: format, properties: [:])
             else {
                 return nil

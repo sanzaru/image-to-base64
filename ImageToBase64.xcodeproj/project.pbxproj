@@ -17,12 +17,13 @@
 		688337E52353D6E800442754 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688337E42353D6E800442754 /* AppGlobals.swift */; };
 		6899B2E623ABDBB800E529DF /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6899B2E523ABDBB800E529DF /* NotificationView.swift */; };
 		6899B2E823AC365600E529DF /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6899B2E723AC365600E529DF /* NotificationView.xib */; };
-		6899B2EA23AC46E500E529DF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6899B2E923AC46E500E529DF /* README.md */; };
+		6899B2EA23AC46E500E529DF /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 6899B2E923AC46E500E529DF /* CHANGELOG.md */; };
 		68EB5F39231EC9CC008CC8EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EB5F38231EC9CC008CC8EB /* AppDelegate.swift */; };
 		68EB5F3B231EC9CC008CC8EB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EB5F3A231EC9CC008CC8EB /* MainViewController.swift */; };
 		68EB5F3D231ECA0E008CC8EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EB5F3C231ECA0E008CC8EB /* Assets.xcassets */; };
 		68EB5F40231ECA0E008CC8EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68EB5F3E231ECA0E008CC8EB /* Main.storyboard */; };
 		68EB5F49231EDE9B008CC8EB /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EB5F48231EDE9B008CC8EB /* DragView.swift */; };
+		68EE8ACB24F539EE0069FB40 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 68EE8ACA24F539EE0069FB40 /* README.md */; };
 		68FFBEDB24803C3700D1CF4D /* DimensionFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FFBED924803C3700D1CF4D /* DimensionFormViewController.swift */; };
 		68FFBEDC24803C3700D1CF4D /* DimensionFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68FFBEDA24803C3700D1CF4D /* DimensionFormViewController.xib */; };
 		C32645BABCDF4A0750DC5DDF /* Pods_ImageToBase64.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 273B154F07159380D658CCDD /* Pods_ImageToBase64.framework */; };
@@ -36,12 +37,13 @@
 		680BADCF23A90A7600517FE2 /* ProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingView.swift; sourceTree = "<group>"; };
 		680D8264232AD3A6009BDCC3 /* ImageConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConverter.swift; sourceTree = "<group>"; };
 		6831198423AAAF4800235539 /* CodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeModel.swift; sourceTree = "<group>"; };
+		6833237324CC61EC00D8C8CA /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		683E7EE323A2B2F100EB8AD4 /* CodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CodeView.xib; sourceTree = "<group>"; };
 		683E7EE523A2E50700EB8AD4 /* DragView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DragView.xib; sourceTree = "<group>"; };
 		688337E42353D6E800442754 /* AppGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGlobals.swift; sourceTree = "<group>"; };
 		6899B2E523ABDBB800E529DF /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		6899B2E723AC365600E529DF /* NotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
-		6899B2E923AC46E500E529DF /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		6899B2E923AC46E500E529DF /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		68EB5F35231EC9CC008CC8EB /* ImageToBase64.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageToBase64.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68EB5F38231EC9CC008CC8EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68EB5F3A231EC9CC008CC8EB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 		68EB5F41231ECA0E008CC8EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68EB5F42231ECA0E008CC8EB /* ImageConvert.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ImageConvert.entitlements; sourceTree = "<group>"; };
 		68EB5F48231EDE9B008CC8EB /* DragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
+		68EE8ACA24F539EE0069FB40 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		68FFBED924803C3700D1CF4D /* DimensionFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionFormViewController.swift; sourceTree = "<group>"; };
 		68FFBEDA24803C3700D1CF4D /* DimensionFormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DimensionFormViewController.xib; sourceTree = "<group>"; };
 		93B2843DD54A214309E3B34C /* Pods-ImageToBase64.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageToBase64.debug.xcconfig"; path = "Target Support Files/Pods-ImageToBase64/Pods-ImageToBase64.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,6 +76,14 @@
 				6831198423AAAF4800235539 /* CodeModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6833237424CC654C00D8C8CA /* ImageConverter */ = {
+			isa = PBXGroup;
+			children = (
+				680D8264232AD3A6009BDCC3 /* ImageConverter.swift */,
+			);
+			path = ImageConverter;
 			sourceTree = "<group>";
 		};
 		687B1A1924788B8D00744AD1 /* DragView */ = {
@@ -145,6 +156,7 @@
 		68EB5F2C231EC9CB008CC8EB = {
 			isa = PBXGroup;
 			children = (
+				68EE8ACA24F539EE0069FB40 /* README.md */,
 				68EB5F37231EC9CC008CC8EB /* ImageConvert */,
 				68EB5F36231EC9CC008CC8EB /* Products */,
 				6F4A0A4119A71A0F04C26C9C /* Pods */,
@@ -167,7 +179,8 @@
 				68EB5F3C231ECA0E008CC8EB /* Assets.xcassets */,
 				68EB5F41231ECA0E008CC8EB /* Info.plist */,
 				68EB5F42231ECA0E008CC8EB /* ImageConvert.entitlements */,
-				6899B2E923AC46E500E529DF /* README.md */,
+				6899B2E923AC46E500E529DF /* CHANGELOG.md */,
+				6833237324CC61EC00D8C8CA /* LICENSE */,
 			);
 			path = ImageConvert;
 			sourceTree = "<group>";
@@ -175,11 +188,11 @@
 		68EB5F4A231EF31B008CC8EB /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				687B1A25247B1C3400744AD1 /* Views */,
+				6833237424CC654C00D8C8CA /* ImageConverter */,
 				6831198323AAAF2B00235539 /* Models */,
+				687B1A25247B1C3400744AD1 /* Views */,
 				68EB5F38231EC9CC008CC8EB /* AppDelegate.swift */,
 				688337E42353D6E800442754 /* AppGlobals.swift */,
-				680D8264232AD3A6009BDCC3 /* ImageConverter.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -268,7 +281,8 @@
 				680BADCE23A7AAAA00517FE2 /* ProcessingView.xib in Resources */,
 				680BADA823A2F13800517FE2 /* DragView.xib in Resources */,
 				68FFBEDC24803C3700D1CF4D /* DimensionFormViewController.xib in Resources */,
-				6899B2EA23AC46E500E529DF /* README.md in Resources */,
+				68EE8ACB24F539EE0069FB40 /* README.md in Resources */,
+				6899B2EA23AC46E500E529DF /* CHANGELOG.md in Resources */,
 				683E7EE423A2B2F100EB8AD4 /* CodeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

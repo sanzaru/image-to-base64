@@ -5,6 +5,8 @@
 //  Created by Martin Albrecht on 18.12.19.
 //  Copyright © 2019 Martin Albrecht <martin.albrecht@seriousmonkey.de>. All rights reserved.
 //
+//  Licensed under Apache License v2.0
+//
 
 import Cocoa
 
@@ -12,23 +14,18 @@ class CodeModel {
     private var rawBase64Code: String
     
     init(code: String) {
-        self.rawBase64Code = code
+        rawBase64Code = code.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
-    func getCode(forDataUrl: Bool, type: ImageConverter.FileType) -> String {
-        if forDataUrl {
-            let prefix = self.getPrefix(type: type)
-            return "data:\(prefix);base64,\(rawBase64Code)"
-        }
-        
-        return rawBase64Code
+    func code(forDataUrl: Bool, type: ImageConverter.FileType) -> String {
+        return forDataUrl ? "data:\(prefix(of: type));base64,\(rawBase64Code)" : rawBase64Code
     }
     
     func clear() {
         rawBase64Code = ""
     }
     
-    private func getPrefix(type: ImageConverter.FileType) -> String {
+    private func prefix(of type: ImageConverter.FileType) -> String {
         switch type {
         case .jpeg:
             return "image/jpg"

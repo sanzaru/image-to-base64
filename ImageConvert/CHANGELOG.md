@@ -1,6 +1,8 @@
-# ImageConvert
+#  Changelog
 
-##  Changelog
+### v2.1.1
+    - Handle return key in SVG dimensions dialog
+
 
 ### v2.1.0
     - Support for SVG vector images
@@ -22,6 +24,7 @@
     - Encapsulated converter functionality
     - Added script for automatic build number increment
     - Added changelog
+
 
 ### v1.0.0
     - Initial releae version

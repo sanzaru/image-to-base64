@@ -5,6 +5,8 @@
 //  Created by Martin Albrecht on 28.05.20.
 //  Copyright © 2020 Martin Albrecht <martin.albrecht@seriousmonkey.de>. All rights reserved.
 //
+//  Licensed under Apache License v2.0
+//
 
 import Cocoa
 

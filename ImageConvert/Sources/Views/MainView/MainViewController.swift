@@ -5,6 +5,8 @@
 //  Created by Martin on 03.09.19.
 //  Copyright © 2019 seriousmonkey. All rights reserved.
 //
+//  Licensed under Apache License v2.0
+//
 
 import Cocoa
 
@@ -61,7 +63,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     func checkboxClicked() {
         if self.image != nil {
             if let fileType = self.getSelectedImageFileType() {
-                self.setTextfield(with: (self.codeModel?.getCode(
+                self.setTextfield(with: (self.codeModel?.code(
                     forDataUrl: self.codeView.checkboxState() == .on,
                     type: fileType))!, isSvg: self.svgData != nil
                 )
@@ -264,7 +266,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
         
         func setContent(content: String, format: ImageConverter.FileType) {
             self.codeModel = CodeModel(code: content)
-            self.setTextfield(with: (self.codeModel?.getCode(
+            self.setTextfield(with: (self.codeModel?.code(
                 forDataUrl: self.codeView.checkboxState() == .on,
                 type: format))!, isSvg: self.svgData != nil
             )
@@ -278,7 +280,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
                     if format == .svg && self.svgData != nil {
                         self.codeModel = CodeModel(code: self.svgData!.base64EncodedString())
                         setContent(content: self.svgData!.base64EncodedString(), format: format)
-                    } else if let content = self.image!.toBase64String(imageFormat: format) {
+                    } else if let content = self.image!.toBase64String(from: format) {
                         setContent(content: content, format: format)
                     }
                     
