@@ -1,7 +1,9 @@
 # Image To Base64 Encoder
 **Convert images to base64 code**
 
-This is the repository for the ImageToBase64 app which can be found on the [Mac App Store](https://apps.apple.com/us/app/image-to-base64-encoder/id1479205687). 
+This is the repository for the ImageToBase64 app which can be found on the Mac App Store:
+
+[<img src="https://imagetobase64.seriousmonkey.de/static/media/appstore.8e9c1fdc.png" width="250px">](https://apps.apple.com/us/app/image-to-base64-encoder/id1479205687). 
 
 ImageToBase64 is a simple, free to use image encoding utility that lets you convert your local image files to base64 code for use in HTML image tags, emails, etc.
 
