@@ -12,7 +12,7 @@ import Cocoa
 import SVGKit
 
 
-final class ImageConverter: NSObject {
+struct ImageConverter {
     enum FileType {
         case jpeg, png, svg
     }

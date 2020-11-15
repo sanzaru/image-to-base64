@@ -11,6 +11,13 @@
 import Cocoa
 
 class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, DimensionFormViewDelegate {
+    @IBOutlet var codeView: CodeView!
+    @IBOutlet var dragView: DragView!
+    @IBOutlet var dragImage: NSImageView!
+    @IBOutlet var statusLabel: NSTextField!
+    @IBOutlet var dragInfoView: NSStackView!
+    @IBOutlet var notificationView: NotificationView!
+    
     // MARK: - Properties
     private weak var image: NSImage?
     private var svgData: Data?
@@ -22,31 +29,43 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
         case ondrag = 0, processing, error, none
     }
     
-    @IBOutlet var codeView: CodeView!
-    @IBOutlet var dragView: DragView!
-    @IBOutlet var dragImage: NSImageView!
-    @IBOutlet var statusLabel: NSTextField!
-    @IBOutlet var dragInfoView: NSStackView!
-    @IBOutlet var processingView: ProcessingView!
-    @IBOutlet var notificationView: NotificationView!
+    /// Fetch the selected file type from the drop down inside the code view and return it
+    private var selectedImageFileType: ImageConverter.FileType? {
+        guard let selectedFileType = codeView.selectedFileType() else {
+            return nil
+        }
+        
+        switch selectedFileType {
+        case "image/jpg":
+            return .jpeg
+        case "image/png":
+            return .png
+        case "image/svg+xml":
+            return .svg
+        default:
+            return nil
+        }
+    }
     
     // MARK: - Main
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setStatusLabel(to: .none)
-        
         dragView.delegate = self
         codeView.delegate = self
         
         dragInfoView.isHidden = false
-        processingView.isHidden = true
         codeView.isHidden = true
+        
+        setStatusLabel(to: .none)
+        
+        // Attach subviews
+        attachSubviews()
     }
     
     // MARK: - Menu item handler
     @IBAction func copyToClipboard(_ sender: Any) {
-        AppGlobals.copyToClipboard(content: self.codeView.getContent())
+        AppGlobals.copyToClipboard(content: codeView.getContent())
         copiedToClipboard()
     }
     
@@ -54,18 +73,18 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     
     /// Handler for changes in select box
     func selectChanged() {
-        if self.image != nil {
+        if image != nil {
             updateBase64Content()
         }
     }
     
     /// Handler for changes on checkbox
     func checkboxClicked() {
-        if self.image != nil {
-            if let fileType = self.getSelectedImageFileType() {
-                self.setTextfield(with: (self.codeModel?.code(
-                    forDataUrl: self.codeView.checkboxState() == .on,
-                    type: fileType))!, isSvg: self.svgData != nil
+        if image != nil {
+            if let fileType = selectedImageFileType {
+                setTextfield(with: (codeModel?.code(
+                    forDataUrl: codeView.checkboxState() == .on,
+                    type: fileType))!, isSvg: svgData != nil
                 )
             }
         }
@@ -73,17 +92,15 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     
     /// Handler for click on done button
     func doneButtonClicked() {
-        self.image = nil
-        self.svgData = nil
-        self.codeModel = nil
+        image = nil
+        svgData = nil
+        codeModel = nil
         
         resetDragViewStatus()
         codeModel?.clear()
         codeView.clearTextview()
         
-        if notificationView != nil {
-            notificationView!.close()
-        }
+        notificationView?.close()
         
         codeView.isHidden = true
         dragView.isHidden = false
@@ -92,9 +109,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     
     /// Handler for copiedToClipboard event
     func copiedToClipboard() {
-        if notificationView != nil {
-            notificationView!.show(with: "Copied to clipboard", duration: AppGlobals.notificationDisplayDuration)
-        }
+        notificationView?.show(with: "Copied to clipboard", duration: AppGlobals.notificationDisplayDuration)
     }
     
     // MARK: - DragViewDelegate
@@ -106,21 +121,17 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     }
     
     /// Called when dragging is started
-    func dragStarted() {
-        if notificationView != nil {
-            notificationView!.close()
-        }
-        
+    func dragStarted() {        
         dragImage.image = NSImage(named: "UploadIcon")
         setStatusLabel(to: .ondrag)
     }
     
     /// Called when dragged item exited the window
     func dragExit() {
-        if self.image == nil {
+        if image == nil {
             resetDragViewStatus()
         } else {
-            dragImage.image = self.image
+            dragImage.image = image
         }
     }
     
@@ -136,13 +147,13 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     ///   - w: The witdth of the given image
     ///   - h: The height of the given image
     func dimensionFormViewSave(w: CGFloat, h: CGFloat) {
-        if let img = ImageConverter.svgToImage(data: svgData!, w: w, h: h) {
-            image = img
-            dragImage.image = image
-            updateBase64Content()
-        } else {
-            setError()
+        guard let img = ImageConverter.svgToImage(data: svgData!, w: w, h: h) else {
+            return setError(with: "Error setting SVG dimensions")
         }
+            
+        image = img
+        dragImage.image = image
+        updateBase64Content()
     }
     
     /// Cancel the dimensions dialog and reset drag view
@@ -153,6 +164,27 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     
     // MARK: - Private methods
     
+    private func attachSubviews() {
+        // Drag view
+        dragView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(dragView)
+        
+        dragView.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        dragView.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
+        
+        // Code view
+        view.addSubview(codeView)
+                
+        // Notification view
+        notificationView.translatesAutoresizingMaskIntoConstraints = false
+        notificationView.layer?.zPosition = 99
+        view.addSubview(notificationView)
+                
+        notificationView.widthAnchor.constraint(greaterThanOrEqualToConstant: 300).isActive = true
+        notificationView.topAnchor.constraint(equalTo: view.topAnchor, constant: 30).isActive = true
+        notificationView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+    }
+    
     /// Process the image at the given URL path
     /// - Parameter URL: The path of the image
     private func processImage(from URL: NSURL) {
@@ -161,28 +193,30 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
         
         /// Check for SVG image
         /// NOTE: This check has to be done first, as NSImage would recognize the given image as valid, but without any dimenstion information.
-        ///      It would basically be a 0x0 NSImage with no @Content
-        if self.pathIsSvg(path: URL) {
-            // Fetch SVG data
-            svgData = try? Data(contentsOf: URL as URL)
+        ///      It would basically be a 0x0 NSImage with no content
+        do {
+            let imageData = try Data(contentsOf: URL as URL)
             
-            if svgData != nil,
-                let size = ImageConverter.svgDimensions(from: svgData!) {
-                dimensionsFormView.delegate = self
-                dimensionsFormView.dimensions = (Int(size.0), Int(size.1))
-                presentAsSheet(dimensionsFormView)
+            if pathIsSvg(path: URL) {
+                if let size = ImageConverter.svgDimensions(from: imageData) {
+                    svgData = imageData
+                    dimensionsFormView.delegate = self
+                    dimensionsFormView.dimensions = (Int(size.0), Int(size.1))
+                    presentAsSheet(dimensionsFormView)
+                } else {
+                    throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Error fetching SVG dimensions."])
+                }
             } else {
-                setError()
+                if let imageContent = NSImage(data: imageData) {
+                    image = imageContent
+                    updateBase64Content()
+                    dragImage.image = imageContent
+                } else {
+                    throw NSError(domain: "", code: 0, userInfo: [NSLocalizedDescriptionKey : "Error loading image"])
+                }
             }
-        } else {
-            if let image = NSImage(byReferencingFile: URL.path!) {
-                svgData = nil
-                self.image = image
-                updateBase64Content()
-                dragImage.image = image
-            } else {
-                setError()
-            }
+        } catch let error {
+            setError(with: error.localizedDescription)
         }
     }
     
@@ -196,11 +230,11 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     }
     
     /// Show an error message inside the notification view and reset the drag view
-    private func setError() {
-        if notificationView != nil {
-            notificationView!.show(with: "There was an error processing the image. Try another.", duration: AppGlobals.notificationDisplayDuration)
-        }
-        
+    private func setError(with message: String? = nil) {
+        notificationView?.show(
+            with: message ?? "There was an error processing the image. Try another.",
+            duration: AppGlobals.notificationDisplayDuration
+        )
         resetDragViewStatus()
     }
     
@@ -238,44 +272,25 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
         codeView.updateViewControls(isError: false, isSvg: isSvg)
     }
     
-    /// Fetch the selected file type from the drop down inside the code view and return it
-    /// - Returns: The selected file type or nil. There should always be a value, so nil is an indication for an error
-    private func getSelectedImageFileType() -> ImageConverter.FileType? {
-        if let selectedFileType = self.codeView.selectedFileType() {
-            switch selectedFileType {
-            case "image/jpg":
-                return .jpeg
-            case "image/png":
-                return .png
-            case "image/svg+xml":
-                return .svg
-            default:
-                return nil
-            }
-        }
-        
-        return nil
-    }
-    
     /// Update the base64 code and put it into the textview inside our code view
     private func updateBase64Content() {
-        self.codeView.isHidden = true
-        self.dragView.isHidden = true
-        self.dragInfoView.isHidden = false
-        self.statusLabel.stringValue = AppGlobals.statusLabelTexts["processing"]!
+        codeView.isHidden = true
+        dragView.isHidden = true
+        dragInfoView.isHidden = false
+        statusLabel.stringValue = AppGlobals.statusLabelTexts["processing"]!
         
         func setContent(content: String, format: ImageConverter.FileType) {
-            self.codeModel = CodeModel(code: content)
-            self.setTextfield(with: (self.codeModel?.code(
-                forDataUrl: self.codeView.checkboxState() == .on,
-                type: format))!, isSvg: self.svgData != nil
+            codeModel = CodeModel(code: content)
+            setTextfield(with: (codeModel?.code(
+                forDataUrl: codeView.checkboxState() == .on,
+                type: format))!, isSvg: svgData != nil
             )
         }
         
         DispatchQueue.main.async {
             self.dragView.isHidden.toggle()
             
-            if let format = self.getSelectedImageFileType() {
+            if let format = self.selectedImageFileType {
                 if self.image != nil {
                     if format == .svg && self.svgData != nil {
                         self.codeModel = CodeModel(code: self.svgData!.base64EncodedString())
@@ -287,9 +302,10 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
                     self.dragInfoView.isHidden.toggle()
                     self.codeView.isHidden.toggle()
                 } else {
-                    if self.notificationView != nil {
-                        self.notificationView!.show(with: "Error: Invalid image file", duration: AppGlobals.notificationDisplayDuration / 4)
-                    }
+                    self.notificationView?.show(
+                        with: "Error: Invalid image file",
+                        duration: AppGlobals.notificationDisplayDuration / 4
+                    )
                     
                     self.resetDragViewStatus()
                 }

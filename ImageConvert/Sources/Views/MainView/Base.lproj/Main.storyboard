@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -78,16 +78,17 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="-123"/>
+            <point key="canvasLocation" x="44" y="-265"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="ImageToBase64" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+                <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
+                    <window key="window" title="ImageToBase64" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <rect key="contentRect" x="196" y="240" width="606" height="538"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="606" height="538"/>
                         <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
@@ -98,7 +99,7 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="233"/>
+            <point key="canvasLocation" x="44" y="72"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -106,77 +107,52 @@
                 <viewController id="XfG-lQ-9wD" customClass="MainViewController" customModule="ImageToBase64" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="606" height="538"/>
-                        <autoresizingMask key="autoresizingMask"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tio-WQ-ZeT" userLabel="DragInfo">
-                                <rect key="frame" x="103" y="77" width="400" height="384"/>
+                            <visualEffectView blendingMode="behindWindow" material="underWindowBackground" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="5Nj-jw-hVt">
+                                <rect key="frame" x="0.0" y="0.0" width="606" height="538"/>
                                 <subviews>
-                                    <imageView focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="251" tag="-1" translatesAutoresizingMaskIntoConstraints="NO" id="r9n-Md-0Mb">
-                                        <rect key="frame" x="0.0" y="41" width="400" height="343"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="400" id="0bv-FT-tYj"/>
-                                            <constraint firstAttribute="width" secondItem="r9n-Md-0Mb" secondAttribute="height" multiplier="750:643" id="mdz-SR-dvo"/>
-                                        </constraints>
-                                        <imageCell key="cell" refusesFirstResponder="YES" focusRingType="none" alignment="left" imageScaling="proportionallyDown" image="DropIcon" id="ApT-Pa-d6F"/>
-                                    </imageView>
-                                    <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n6U-9t-KEu">
-                                        <rect key="frame" x="-2" y="0.0" width="404" height="33"/>
-                                        <textFieldCell key="cell" lineBreakMode="clipping" focusRingType="none" alignment="center" title="Drag your image here" id="Yms-eZ-OY8">
-                                            <font key="font" metaFont="system" size="28"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
+                                    <stackView distribution="fill" orientation="vertical" alignment="centerX" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tio-WQ-ZeT" userLabel="DragInfo">
+                                        <rect key="frame" x="103" y="77" width="400" height="384"/>
+                                        <subviews>
+                                            <imageView wantsLayer="YES" focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="251" tag="-1" translatesAutoresizingMaskIntoConstraints="NO" id="r9n-Md-0Mb">
+                                                <rect key="frame" x="0.0" y="41" width="400" height="343"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="400" id="0bv-FT-tYj"/>
+                                                    <constraint firstAttribute="width" secondItem="r9n-Md-0Mb" secondAttribute="height" multiplier="750:643" id="mdz-SR-dvo"/>
+                                                </constraints>
+                                                <imageCell key="cell" refusesFirstResponder="YES" focusRingType="none" alignment="left" imageScaling="proportionallyDown" image="DropIcon" id="ApT-Pa-d6F"/>
+                                            </imageView>
+                                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n6U-9t-KEu">
+                                                <rect key="frame" x="68" y="0.0" width="265" height="33"/>
+                                                <textFieldCell key="cell" lineBreakMode="clipping" focusRingType="none" alignment="center" title="Drag your image here" id="Yms-eZ-OY8">
+                                                    <font key="font" metaFont="system" size="28"/>
+                                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
+                                        </subviews>
+                                        <visibilityPriorities>
+                                            <integer value="1000"/>
+                                            <integer value="1000"/>
+                                        </visibilityPriorities>
+                                        <customSpacing>
+                                            <real value="3.4028234663852886e+38"/>
+                                            <real value="3.4028234663852886e+38"/>
+                                        </customSpacing>
+                                    </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="n6U-9t-KEu" firstAttribute="centerX" secondItem="tio-WQ-ZeT" secondAttribute="centerX" id="S8Z-27-ibg"/>
+                                    <constraint firstItem="tio-WQ-ZeT" firstAttribute="centerX" secondItem="5Nj-jw-hVt" secondAttribute="centerX" id="1qU-Ml-dee"/>
+                                    <constraint firstItem="tio-WQ-ZeT" firstAttribute="centerY" secondItem="5Nj-jw-hVt" secondAttribute="centerY" id="KNQ-P6-994"/>
                                 </constraints>
-                                <visibilityPriorities>
-                                    <integer value="1000"/>
-                                    <integer value="1000"/>
-                                </visibilityPriorities>
-                                <customSpacing>
-                                    <real value="3.4028234663852886e+38"/>
-                                    <real value="3.4028234663852886e+38"/>
-                                </customSpacing>
-                            </stackView>
-                            <customView identifier="DragView" translatesAutoresizingMaskIntoConstraints="NO" id="vdg-d4-PwV" userLabel="DragView" customClass="DragView" customModule="ImageToBase64" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="606" height="538"/>
-                            </customView>
-                            <customView hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cE3-Y7-499" userLabel="CodeView" customClass="CodeView" customModule="ImageToBase64" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="606" height="538"/>
-                            </customView>
-                            <customView hidden="YES" id="hET-m7-DsU" customClass="ProcessingView" customModule="ImageToBase64" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="606" height="538"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </customView>
-                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="fyg-oZ-H5C" customClass="NotificationView" customModule="ImageToBase64" customModuleProvider="target">
-                                <rect key="frame" x="103" y="468" width="400" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="EVS-cb-MfN"/>
-                                </constraints>
-                            </customView>
+                            </visualEffectView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="cE3-Y7-499" secondAttribute="trailing" id="0Cj-bC-Hgg"/>
-                            <constraint firstItem="cE3-Y7-499" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="4HR-nS-cVw"/>
-                            <constraint firstItem="tio-WQ-ZeT" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="9PL-Vj-wA1"/>
-                            <constraint firstItem="fyg-oZ-H5C" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Cha-zn-f8R"/>
-                            <constraint firstItem="fyg-oZ-H5C" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" id="Drt-Ll-faX"/>
-                            <constraint firstAttribute="bottom" secondItem="hET-m7-DsU" secondAttribute="bottom" id="G5R-XE-N1T"/>
-                            <constraint firstItem="tio-WQ-ZeT" firstAttribute="top" secondItem="fyg-oZ-H5C" secondAttribute="bottom" constant="7" id="J3n-cV-C29"/>
-                            <constraint firstAttribute="bottom" secondItem="vdg-d4-PwV" secondAttribute="bottom" id="RmA-Ui-ALT"/>
-                            <constraint firstItem="cE3-Y7-499" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="Rti-Yd-XJa"/>
-                            <constraint firstItem="tio-WQ-ZeT" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="U3H-vh-EAT"/>
-                            <constraint firstAttribute="trailing" secondItem="vdg-d4-PwV" secondAttribute="trailing" id="VyH-lp-U2K"/>
-                            <constraint firstItem="vdg-d4-PwV" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="WjF-WZ-Q7n"/>
-                            <constraint firstItem="fyg-oZ-H5C" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="ZD4-Ea-6fB"/>
-                            <constraint firstAttribute="bottom" secondItem="cE3-Y7-499" secondAttribute="bottom" id="owJ-In-zmP"/>
-                            <constraint firstItem="hET-m7-DsU" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="pJ6-wj-ZNE"/>
-                            <constraint firstItem="fyg-oZ-H5C" firstAttribute="leading" secondItem="tio-WQ-ZeT" secondAttribute="leading" id="sRp-yM-Pjk"/>
-                            <constraint firstItem="hET-m7-DsU" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="vWs-QU-cIP"/>
-                            <constraint firstItem="vdg-d4-PwV" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="xz4-Ks-7cc"/>
-                            <constraint firstAttribute="trailing" secondItem="hET-m7-DsU" secondAttribute="trailing" id="y6N-LF-CGH"/>
+                            <constraint firstItem="5Nj-jw-hVt" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="6m2-Tj-Klx"/>
+                            <constraint firstAttribute="bottom" secondItem="5Nj-jw-hVt" secondAttribute="bottom" id="IYD-GW-Tyg"/>
+                            <constraint firstItem="5Nj-jw-hVt" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="PN0-VA-t56"/>
+                            <constraint firstAttribute="trailing" secondItem="5Nj-jw-hVt" secondAttribute="trailing" id="e8Q-yq-rob"/>
                         </constraints>
                     </view>
                     <connections>
@@ -185,13 +161,26 @@
                         <outlet property="dragInfoView" destination="tio-WQ-ZeT" id="odn-FZ-TVo"/>
                         <outlet property="dragView" destination="vdg-d4-PwV" id="Bgy-fa-WkF"/>
                         <outlet property="notificationView" destination="fyg-oZ-H5C" id="ypE-I3-INR"/>
-                        <outlet property="processingView" destination="hET-m7-DsU" id="BYl-py-3Dm"/>
                         <outlet property="statusLabel" destination="n6U-9t-KEu" id="UbW-yR-a7T"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customView identifier="DragView" id="vdg-d4-PwV" userLabel="DragView" customClass="DragView" customModule="ImageToBase64" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="606" height="538"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                </customView>
+                <customView hidden="YES" id="cE3-Y7-499" userLabel="CodeView" customClass="CodeView" customModule="ImageToBase64" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="606" height="538"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                </customView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="fyg-oZ-H5C" customClass="NotificationView" customModule="ImageToBase64" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="EVS-cb-MfN"/>
+                    </constraints>
+                </customView>
             </objects>
-            <point key="canvasLocation" x="75" y="919"/>
+            <point key="canvasLocation" x="44" y="944"/>
         </scene>
     </scenes>
     <resources>

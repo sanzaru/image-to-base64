@@ -15,6 +15,8 @@ class NotificationView: NSView {
     @IBOutlet var mainView: NSView!
     @IBOutlet var messageLabel: NSTextField!
     
+    @IBInspectable var backgroundColor: NSColor = .systemBlue
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()

@@ -1,5 +1,11 @@
 #  Changelog
 
+### v2.1.2
+    - Fixes for Mac OS 11
+    - Performance and stability improvements
+    - Window resizing implemented
+    
+
 ### v2.1.1
     - Handle return key in SVG dimensions dialog
 

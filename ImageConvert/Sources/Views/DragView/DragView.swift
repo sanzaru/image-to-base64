@@ -45,7 +45,7 @@ class DragView: NSView {
     
     // MARK: - Dragging overrides
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
-        if checkFileExtension(drag: sender) {
+        if fileExtensionAllowed(from: sender) {
             fileExtensionOkay = true
             delegate?.dragStarted()
             return .copy
@@ -80,10 +80,10 @@ class DragView: NSView {
                                  NSPasteboard.PasteboardType(kUTTypeItem as String)])
         
         let bundle = Bundle(for: type(of: self))
-        let nib = NSNib(nibNamed: .init(String(describing: type(of: self))), bundle: bundle)!
-        nib.instantiate(withOwner: self, topLevelObjects: nil)
-
-        addSubview(mainView)
+        if let nib = NSNib(nibNamed: .init(String(describing: type(of: self))), bundle: bundle) {
+            nib.instantiate(withOwner: self, topLevelObjects: nil)
+            addSubview(mainView)
+        }
     }
     
     private func fileUrl(from info: NSDraggingInfo) -> NSURL? {
@@ -95,12 +95,11 @@ class DragView: NSView {
         return nil
     }
     
-    private func checkFileExtension(drag: NSDraggingInfo) -> Bool {
-        if let url = fileUrl(from: drag),
-            let fileExtension = url.pathExtension?.lowercased() {
-                return allowedFileExtensions.contains(fileExtension)
+    private func fileExtensionAllowed(from info: NSDraggingInfo) -> Bool {
+        guard let url = fileUrl(from: info), let fileExtension = url.pathExtension?.lowercased() else {
+            return false
         }
         
-        return false
+        return allowedFileExtensions.contains(fileExtension)
     }
 }

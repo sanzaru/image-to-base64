@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17506" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17506"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,29 +16,29 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="c22-O7-iKe">
             <rect key="frame" x="0.0" y="0.0" width="400" height="48"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES"/>
             <subviews>
-                <box boxType="custom" cornerRadius="4" title="Box" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="gJ9-OY-QbD">
+                <box boxType="custom" borderType="none" cornerRadius="4" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="gJ9-OY-QbD">
                     <rect key="frame" x="0.0" y="0.0" width="400" height="48"/>
                     <view key="contentView" id="kU2-gX-70V">
-                        <rect key="frame" x="1" y="1" width="398" height="46"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="48"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView distribution="equalSpacing" orientation="horizontal" alignment="centerY" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHA-Im-TfG">
-                                <rect key="frame" x="20" y="13" width="358" height="20"/>
+                                <rect key="frame" x="16" y="14" width="368" height="20"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cso-fK-xc0">
                                         <rect key="frame" x="-2" y="2" width="41" height="16"/>
                                         <textFieldCell key="cell" lineBreakMode="clipping" title="Label " id="8ED-Lh-GjC">
                                             <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aEc-NU-TmV">
-                                        <rect key="frame" x="332" y="-7" width="32" height="31"/>
+                                        <rect key="frame" x="345" y="-3" width="26" height="26"/>
                                         <buttonCell key="cell" type="round" bezelStyle="circular" image="NSStopProgressTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lRq-OH-04C">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
                                         <color key="contentTintColor" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -58,13 +58,13 @@
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="bHA-Im-TfG" secondAttribute="trailing" constant="20" symbolic="YES" id="3qm-yA-bWT"/>
+                            <constraint firstAttribute="trailing" secondItem="bHA-Im-TfG" secondAttribute="trailing" constant="16" symbolic="YES" id="3qm-yA-bWT"/>
                             <constraint firstItem="bHA-Im-TfG" firstAttribute="centerY" secondItem="kU2-gX-70V" secondAttribute="centerY" id="KM6-xy-jM0"/>
-                            <constraint firstItem="bHA-Im-TfG" firstAttribute="leading" secondItem="kU2-gX-70V" secondAttribute="leading" constant="20" symbolic="YES" id="jbv-Rt-w7Z"/>
+                            <constraint firstItem="bHA-Im-TfG" firstAttribute="leading" secondItem="kU2-gX-70V" secondAttribute="leading" constant="16" symbolic="YES" id="jbv-Rt-w7Z"/>
                         </constraints>
                     </view>
                     <color key="borderColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                    <color key="fillColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="fillColor" red="0.021869524765566861" green="0.33552753867762286" blue="0.65907379291281565" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </box>
             </subviews>
             <constraints>
@@ -77,6 +77,6 @@
         </customView>
     </objects>
     <resources>
-        <image name="NSStopProgressTemplate" width="11" height="11"/>
+        <image name="NSStopProgressTemplate" width="14" height="13"/>
     </resources>
 </document>
