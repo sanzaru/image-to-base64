@@ -1,0 +1,6 @@
+framework module Pods_ImageToBase64 {
+  umbrella header "Pods-ImageToBase64-umbrella.h"
+
+  export *
+  module * { export * }
+}
