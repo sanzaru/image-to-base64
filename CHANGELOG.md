@@ -1,5 +1,8 @@
 #  Changelog
 
+### v2.2.0
+    - Apple Silicon M1 support
+
 ### v2.1.2
     - Fixes for Mac OS 11
     - Performance and stability improvements
