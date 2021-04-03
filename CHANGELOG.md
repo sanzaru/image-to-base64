@@ -2,6 +2,7 @@
 
 ### v.2.2.1
     - Updated app icon
+    - Image preview inside code view
 
 ### v2.2.0
     - Apple Silicon M1 support
