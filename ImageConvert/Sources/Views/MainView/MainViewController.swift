@@ -24,7 +24,8 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     private var codeModel: CodeModel?
     
     private lazy var dimensionsFormView: DimensionFormViewController = DimensionFormViewController()
-    
+    private lazy var previewController: ImagePreviewViewController = ImagePreviewViewController()
+
     private enum labelTypes: Int {
         case ondrag = 0, processing, error, none
     }
@@ -110,6 +111,13 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     /// Handler for copiedToClipboard event
     func copiedToClipboard() {
         notificationView?.show(with: "Copied to clipboard", duration: AppGlobals.notificationDisplayDuration)
+    }
+
+    func onShowPreview() {
+        if let image = image {
+            previewController.image = image
+            presentAsSheet(previewController)
+        }
     }
     
     // MARK: - DragViewDelegate
@@ -269,6 +277,9 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     ///   - isSvg: True if the image is svg, false if not. This basically determines the menu options for output format.
     private func setTextfield(with content: String, isSvg: Bool = false) {
         codeView.setTextview(with: content)
+        if let image = self.image {
+            codeView.setImage(with: image)
+        }
         codeView.updateViewControls(isError: false, isSvg: isSvg)
     }
     
@@ -291,11 +302,11 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
             self.dragView.isHidden.toggle()
             
             if let format = self.selectedImageFileType {
-                if self.image != nil {
+                if let image = self.image {
                     if format == .svg && self.svgData != nil {
                         self.codeModel = CodeModel(code: self.svgData!.base64EncodedString())
                         setContent(content: self.svgData!.base64EncodedString(), format: format)
-                    } else if let content = self.image!.toBase64String(from: format) {
+                    } else if let content = image.toBase64String(from: format) {
                         setContent(content: content, format: format)
                     }
                     

@@ -1,5 +1,8 @@
 #  Changelog
 
+### v.2.2.1
+    - Updated app icon
+
 ### v2.2.0
     - Apple Silicon M1 support
 
@@ -7,7 +10,7 @@
     - Fixes for Mac OS 11
     - Performance and stability improvements
     - Window resizing implemented
-    
+
 
 ### v2.1.1
     - Handle return key in SVG dimensions dialog
@@ -23,7 +26,7 @@
     - New UI interface
     - HEIF image format support
     - Notification view implementation
-    
+
 
 ### v1.0.1
     - Fixed drag handling

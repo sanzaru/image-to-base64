@@ -15,6 +15,7 @@ import Cocoa
     func checkboxClicked()
     @objc optional func copiedToClipboard()
     func doneButtonClicked()
+    func onShowPreview()
 }
 
 
@@ -29,7 +30,7 @@ class CodeView: NSView {
             outputTextField.textStorage?.append(NSAttributedString(string: self.base64code!, attributes: [NSAttributedString.Key.foregroundColor: NSColor.textColor] as [NSAttributedString.Key: Any]))
             updateCharCountLabel()
         }
-    }
+    }    
     
     @IBOutlet var mainView: NSView!
     @IBOutlet var charCountLabel: NSTextField!
@@ -37,7 +38,9 @@ class CodeView: NSView {
     @IBOutlet var selectFileType: NSPopUpButton!
     @IBOutlet var checkboxDataUrl: NSButton!
     @IBOutlet var copyToClipboardButton: NSButton!
-    
+    @IBOutlet var previewImage: NSButton!
+
+
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -74,7 +77,11 @@ class CodeView: NSView {
     @IBAction func onDoneButtonClicked(_ sender: NSButton) {
         self.delegate?.doneButtonClicked()
     }
-    
+
+    @IBAction func onPreviewClick(_ sender: Any) {
+        self.delegate?.onShowPreview()
+    }
+
     // MARK: - Public methods
     func getContent() -> String {
         return self.base64code ?? ""
@@ -86,6 +93,10 @@ class CodeView: NSView {
     
     func setTextview(with: String) {
         base64code = with
+    }
+
+    func setImage(with image: NSImage) {
+        previewImage.image = image
     }
     
     func selectedFileType() -> String? {
@@ -113,6 +124,12 @@ class CodeView: NSView {
         if let menuitem = selectFileType.menu?.item(withTitle: "image/svg+xml") {
             menuitem.isHidden = !isSvg            
         }
+    }
+
+    func showImageModal() {
+        let view = NSView()
+
+        addSubview(view)
     }
  
     // MARK: - Private methods
