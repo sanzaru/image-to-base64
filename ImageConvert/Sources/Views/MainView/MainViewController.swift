@@ -32,7 +32,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     
     /// Fetch the selected file type from the drop down inside the code view and return it
     private var selectedImageFileType: ImageConverter.FileType? {
-        guard let selectedFileType = codeView.selectedFileType() else {
+        guard let selectedFileType = codeView.selectedFileType else {
             return nil
         }
         
@@ -68,7 +68,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     
     // MARK: - Menu item handler
     @IBAction func copyToClipboard(_ sender: Any) {
-        ClipboardHelper.copy(from: codeView.getContent())
+        ClipboardHelper.copy(from: codeView.content)
         copiedToClipboard()
     }
     
@@ -86,7 +86,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
         if image != nil {
             if let fileType = selectedImageFileType {
                 setTextfield(with: (codeModel?.code(
-                    forDataUrl: codeView.checkboxState() == .on,
+                    forDataUrl: codeView.checkboxState == .on,
                     type: fileType))!, isSvg: svgData != nil
                 )
             }
@@ -295,7 +295,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
         func setContent(content: String, format: ImageConverter.FileType) {
             codeModel = CodeModel(code: content)
             setTextfield(with: (codeModel?.code(
-                forDataUrl: codeView.checkboxState() == .on,
+                forDataUrl: codeView.checkboxState == .on,
                 type: format))!, isSvg: svgData != nil
             )
         }

@@ -23,14 +23,20 @@ import Cocoa
 class CodeView: NSView {
     // MARK: - Properties
     var delegate: CodeViewDelegate?
+
+    var selectedFileType: String? { selectFileType.titleOfSelectedItem }
+
+    var content: String { base64code ?? "" }
+
+    var checkboxState: NSControl.StateValue { checkboxDataUrl.state }
     
     private var base64code: String? {
         didSet {
             clearTextview()
-            outputTextField.textStorage?.append(NSAttributedString(string: self.base64code!, attributes: [NSAttributedString.Key.foregroundColor: NSColor.textColor] as [NSAttributedString.Key: Any]))
+            outputTextField.textStorage?.append(NSAttributedString(string: base64code!, attributes: [NSAttributedString.Key.foregroundColor: NSColor.textColor] as [NSAttributedString.Key: Any]))
             updateCharCountLabel()
         }
-    }    
+    }
     
     @IBOutlet var mainView: NSView!
     @IBOutlet var charCountLabel: NSTextField!
@@ -65,7 +71,7 @@ class CodeView: NSView {
     }
     
     @IBAction func copyToClipboardClicked(_ sender: NSButton) {
-        if let content = self.base64code {
+        if let content = base64code {
             ClipboardHelper.copy(from: content)
         }
         
@@ -83,10 +89,6 @@ class CodeView: NSView {
     }
 
     // MARK: - Public methods
-    func getContent() -> String {
-        return self.base64code ?? ""
-    }
-    
     func clearTextview() {
         self.outputTextField.textStorage?.mutableString.setString("")
     }
@@ -97,14 +99,6 @@ class CodeView: NSView {
 
     func setImage(with image: NSImage) {
         previewImage.image = image
-    }
-    
-    func selectedFileType() -> String? {
-        return self.selectFileType.titleOfSelectedItem
-    }
-    
-    func checkboxState() -> NSControl.StateValue {
-        return self.checkboxDataUrl.state
     }
     
     func updateViewControls(isError: Bool, isSvg: Bool = false) {
