@@ -66,7 +66,7 @@ class CodeView: NSView {
     
     @IBAction func copyToClipboardClicked(_ sender: NSButton) {
         if let content = self.base64code {
-            AppGlobals.copyToClipboard(content: content)
+            ClipboardHelper.copy(from: content)
         }
         
         if self.delegate?.copiedToClipboard != nil {
