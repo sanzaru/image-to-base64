@@ -32,7 +32,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     
     /// Fetch the selected file type from the drop down inside the code view and return it
     private var selectedImageFileType: ImageConverter.FileType? {
-        guard let selectedFileType = codeView.selectedFileType() else {
+        guard let selectedFileType = codeView.selectedFileType else {
             return nil
         }
         
@@ -62,11 +62,13 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
         
         // Attach subviews
         attachSubviews()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(onFileDropOnDock(_:)), name: AppGlobals.kNotification, object: nil)
     }
     
     // MARK: - Menu item handler
     @IBAction func copyToClipboard(_ sender: Any) {
-        AppGlobals.copyToClipboard(content: codeView.getContent())
+        ClipboardHelper.copy(from: codeView.content)
         copiedToClipboard()
     }
     
@@ -84,7 +86,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
         if image != nil {
             if let fileType = selectedImageFileType {
                 setTextfield(with: (codeModel?.code(
-                    forDataUrl: codeView.checkboxState() == .on,
+                    forDataUrl: codeView.checkboxState == .on,
                     type: fileType))!, isSvg: svgData != nil
                 )
             }
@@ -251,16 +253,16 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     private func setStatusLabel(to: labelTypes = .none) {
         switch to {
         case .error:
-            statusLabel.stringValue = AppGlobals.statusLabelTexts["error"]!
+            statusLabel.stringValue = NSLocalizedString("error", comment: "")
             
         case .ondrag:
-            statusLabel.stringValue = AppGlobals.statusLabelTexts["ondrag"]!
+            statusLabel.stringValue = NSLocalizedString("ondrag", comment: "")
             
         case .processing:
-            statusLabel.stringValue = AppGlobals.statusLabelTexts["processing"]!
+            statusLabel.stringValue = NSLocalizedString("processing", comment: "")
             
         default:
-            statusLabel.stringValue = AppGlobals.statusLabelTexts["default"]!
+            statusLabel.stringValue = NSLocalizedString("default", comment: "")
         }
     }
     
@@ -288,12 +290,12 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
         codeView.isHidden = true
         dragView.isHidden = true
         dragInfoView.isHidden = false
-        statusLabel.stringValue = AppGlobals.statusLabelTexts["processing"]!
+        statusLabel.stringValue = NSLocalizedString("processing", comment: "")
         
         func setContent(content: String, format: ImageConverter.FileType) {
             codeModel = CodeModel(code: content)
             setTextfield(with: (codeModel?.code(
-                forDataUrl: codeView.checkboxState() == .on,
+                forDataUrl: codeView.checkboxState == .on,
                 type: format))!, isSvg: svgData != nil
             )
         }
@@ -322,5 +324,13 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
                 }
             }
         }
-    }    
+    }
+
+    // MARK: - AppDelegate handling
+    @objc private func onFileDropOnDock(_ sender: Notification) {
+        if let filename = sender.object as? String {
+            resetDragViewStatus()
+            processImage(from: NSURL(fileURLWithPath: filename))
+        }
+    }
 }

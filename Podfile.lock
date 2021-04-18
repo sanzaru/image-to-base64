@@ -1,7 +1,7 @@
 PODS:
-  - CocoaLumberjack (3.7.0):
-    - CocoaLumberjack/Core (= 3.7.0)
-  - CocoaLumberjack/Core (3.7.0)
+  - CocoaLumberjack (3.7.2):
+    - CocoaLumberjack/Core (= 3.7.2)
+  - CocoaLumberjack/Core (3.7.2)
   - SVGKit (2.1.0):
     - CocoaLumberjack (~> 3.0)
 
@@ -23,9 +23,9 @@ CHECKOUT OPTIONS:
     :git: https://github.com/SVGKit/SVGKit.git
 
 SPEC CHECKSUMS:
-  CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
+  CocoaLumberjack: b7e05132ff94f6ae4dfa9d5bce9141893a21d9da
   SVGKit: 132b010efbf57ec345309fe4a7f627c0a40c5d63
 
 PODFILE CHECKSUM: fda96e1052ae332a1d381c7344844bfaa6f54822
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.10.0

@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  ImageToBase64
+
+  Created by Martin Albrecht on 13.04.21.
+  Copyright © 2021 Martin Albrecht <martin.albrecht@seriousmonkey.de>. All rights reserved.
+*/
+"default" = "Drag your image";
+"ondrag" = "Release the image";
+"error" = "Error processing the image. Drop another one.";
+"processing" = "Please wait...";
+"done" = "Drag another image";
