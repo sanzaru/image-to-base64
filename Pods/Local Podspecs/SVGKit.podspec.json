@@ -1,6 +1,6 @@
 {
   "name": "SVGKit",
-  "version": "2.1.0",
+  "version": "3.1.0",
   "license": "MIT",
   "platforms": {
     "osx": "10.9",
@@ -20,13 +20,29 @@
   },
   "source": {
     "git": "https://github.com/SVGKit/SVGKit.git",
-    "tag": "2.1.0"
+    "tag": "3.1.0"
   },
   "source_files": [
     "Source/*.{h,m}",
     "Source/**/*.{h,m}"
   ],
   "exclude_files": "Source/include/*.h",
+  "private_header_files": "Source/SVGKDefine_Private.h",
+  "ios": {
+    "private_header_files": [
+      "Source/AppKit additions/SVGKImageRep.h",
+      "Source/Exporters/SVGKExporterNSImage.h"
+    ]
+  },
+  "tvos": {
+    "private_header_files": [
+      "Source/AppKit additions/SVGKImageRep.h",
+      "Source/Exporters/SVGKExporterNSImage.h"
+    ]
+  },
+  "osx": {
+    "private_header_files": "Source/Exporters/SVGKExporterUIImage.h"
+  },
   "libraries": "xml2",
   "frameworks": [
     "QuartzCore",
