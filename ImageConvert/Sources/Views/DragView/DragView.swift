@@ -17,7 +17,6 @@ protocol DragViewDelegate {
     func dragViewEnded(didDragFileWith URL: NSURL)
 }
 
-@IBDesignable
 class DragView: NSView {
     // MARK: - Properties
     let NSFilenamesPboardType = NSPasteboard.PasteboardType("NSFilenamesPboardType")
@@ -25,8 +24,6 @@ class DragView: NSView {
     
     var fileExtensionOkay = false
     var delegate: DragViewDelegate?
-    
-    @IBOutlet var mainView: NSView!
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -79,11 +76,10 @@ class DragView: NSView {
         registerForDraggedTypes([NSPasteboard.PasteboardType(kUTTypeFileURL as String),
                                  NSPasteboard.PasteboardType(kUTTypeItem as String)])
         
-        let bundle = Bundle(for: type(of: self))
-        if let nib = NSNib(nibNamed: .init(String(describing: type(of: self))), bundle: bundle) {
-            nib.instantiate(withOwner: self, topLevelObjects: nil)
-            addSubview(mainView)
-        }
+        let mainView = NSView(frame: frame)
+        mainView.widthAnchor.constraint(equalToConstant: frame.width).isActive = true
+        mainView.heightAnchor.constraint(equalToConstant: frame.height).isActive = true
+        addSubview(mainView)
     }
     
     private func fileUrl(from info: NSDraggingInfo) -> NSURL? {

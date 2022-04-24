@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		680BADA823A2F13800517FE2 /* DragView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 683E7EE523A2E50700EB8AD4 /* DragView.xib */; };
 		680BADCA23A4E6A700517FE2 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680BADC923A4E6A700517FE2 /* CodeView.swift */; };
 		680D8265232AD3A6009BDCC3 /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680D8264232AD3A6009BDCC3 /* ImageConverter.swift */; };
 		6831198523AAAF4800235539 /* CodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6831198423AAAF4800235539 /* CodeModel.swift */; };
@@ -39,7 +38,6 @@
 		680D8264232AD3A6009BDCC3 /* ImageConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConverter.swift; sourceTree = "<group>"; };
 		6831198423AAAF4800235539 /* CodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeModel.swift; sourceTree = "<group>"; };
 		683E7EE323A2B2F100EB8AD4 /* CodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CodeView.xib; sourceTree = "<group>"; };
-		683E7EE523A2E50700EB8AD4 /* DragView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DragView.xib; sourceTree = "<group>"; };
 		688337E42353D6E800442754 /* AppGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGlobals.swift; sourceTree = "<group>"; };
 		6899B2E523ABDBB800E529DF /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		6899B2E723AC365600E529DF /* NotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
@@ -94,7 +92,6 @@
 		687B1A1924788B8D00744AD1 /* DragView */ = {
 			isa = PBXGroup;
 			children = (
-				683E7EE523A2E50700EB8AD4 /* DragView.xib */,
 				68EB5F48231EDE9B008CC8EB /* DragView.swift */,
 			);
 			path = DragView;
@@ -295,7 +292,6 @@
 				68F8A950262609BA003A292C /* Localizable.strings in Resources */,
 				6899B2E823AC365600E529DF /* NotificationView.xib in Resources */,
 				68EB5F40231ECA0E008CC8EB /* Main.storyboard in Resources */,
-				680BADA823A2F13800517FE2 /* DragView.xib in Resources */,
 				68FFBEDC24803C3700D1CF4D /* DimensionFormViewController.xib in Resources */,
 				68EE8AD024F55CC00069FB40 /* LICENSE in Resources */,
 				68EE8ACB24F539EE0069FB40 /* README.md in Resources */,
