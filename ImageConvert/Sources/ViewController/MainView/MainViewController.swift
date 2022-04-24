@@ -72,6 +72,10 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
         copiedToClipboard()
     }
     
+    @IBAction func selectAllText(_ sender: Any) {
+        codeView.selectAllText()
+    }
+    
     // MARK: - CodeViewDelegate
     
     /// Handler for changes in select box

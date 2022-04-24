@@ -125,6 +125,11 @@ class CodeView: NSView {
 
         addSubview(view)
     }
+    
+    func selectAllText() {
+        outputTextField.window?.makeFirstResponder(outputTextField)
+        outputTextField.selectAll(nil)
+    }
  
     // MARK: - Private methods
     private func setup() {
