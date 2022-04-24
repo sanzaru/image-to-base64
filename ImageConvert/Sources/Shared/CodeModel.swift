@@ -17,7 +17,7 @@ class CodeModel {
         rawBase64Code = code.trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
-    func code(forDataUrl: Bool, type: ImageConverter.FileType) -> String {
+    func code(forDataUrl: Bool, type: ImageConverterFileType) -> String {
         return forDataUrl ? "data:\(prefix(of: type));base64,\(rawBase64Code)" : rawBase64Code
     }
     
@@ -25,7 +25,7 @@ class CodeModel {
         rawBase64Code = ""
     }
     
-    private func prefix(of type: ImageConverter.FileType) -> String {
+    private func prefix(of type: ImageConverterFileType) -> String {
         switch type {
         case .jpeg:
             return "image/jpg"

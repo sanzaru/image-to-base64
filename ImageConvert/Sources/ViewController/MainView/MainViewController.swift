@@ -31,7 +31,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     }
     
     /// Fetch the selected file type from the drop down inside the code view and return it
-    private var selectedImageFileType: ImageConverter.FileType? {
+    private var selectedImageFileType: ImageConverterFileType? {
         guard let selectedFileType = codeView.selectedFileType else {
             return nil
         }
@@ -68,7 +68,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     
     // MARK: - Menu item handler
     @IBAction func copyToClipboard(_ sender: Any) {
-        ClipboardHelper.copy(from: codeView.content)
+        codeView.content.copyToClipboard()
         copiedToClipboard()
     }
     
@@ -157,7 +157,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
     ///   - w: The witdth of the given image
     ///   - h: The height of the given image
     func dimensionFormViewSave(w: CGFloat, h: CGFloat) {
-        guard let img = ImageConverter.svgToImage(data: svgData!, w: w, h: h) else {
+        guard let img = svgData?.svgToImage(w: w, h: h) else {
             return setError(with: "Error setting SVG dimensions")
         }
             
@@ -208,7 +208,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
             let imageData = try Data(contentsOf: URL as URL)
             
             if pathIsSvg(path: URL) {
-                if let size = ImageConverter.svgDimensions(from: imageData) {
+                if let size = imageData.svgDimensions {
                     svgData = imageData
                     dimensionsFormView.delegate = self
                     dimensionsFormView.dimensions = (Int(size.0), Int(size.1))
@@ -292,7 +292,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
         dragInfoView.isHidden = false
         statusLabel.stringValue = NSLocalizedString("processing", comment: "")
         
-        func setContent(content: String, format: ImageConverter.FileType) {
+        func setContent(content: String, format: ImageConverterFileType) {
             codeModel = CodeModel(code: content)
             setTextfield(with: (codeModel?.code(
                 forDataUrl: codeView.checkboxState == .on,
@@ -308,7 +308,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate, 
                     if format == .svg && self.svgData != nil {
                         self.codeModel = CodeModel(code: self.svgData!.base64EncodedString())
                         setContent(content: self.svgData!.base64EncodedString(), format: format)
-                    } else if let content = image.toBase64String(from: format) {
+                    } else if let content = image.base64String(from: format) {
                         setContent(content: content, format: format)
                     }
                     

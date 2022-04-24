@@ -8,10 +8,9 @@
 //  Licensed under Apache License v2.0
 //
 
-import Cocoa
+import Foundation
 
-
-class AppGlobals: NSObject {
+struct AppGlobals {
     /// Constant holding the default notification display time
     static let notificationDisplayDuration: Double = 10.0
 
