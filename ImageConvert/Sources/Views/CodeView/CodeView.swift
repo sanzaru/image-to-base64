@@ -18,7 +18,6 @@ import Cocoa
     func onShowPreview()
 }
 
-
 @IBDesignable
 class CodeView: NSView {
     // MARK: - Properties
@@ -29,15 +28,20 @@ class CodeView: NSView {
     var content: String { base64code ?? "" }
 
     var checkboxState: NSControl.StateValue { checkboxDataUrl.state }
-    
+
+    // swiftlint:disable line_length
     private var base64code: String? {
         didSet {
             clearTextview()
-            outputTextField.textStorage?.append(NSAttributedString(string: base64code!, attributes: [NSAttributedString.Key.foregroundColor: NSColor.textColor] as [NSAttributedString.Key: Any]))
+            outputTextField.textStorage?.append(
+                NSAttributedString(
+                    string: base64code!,
+                    attributes: [NSAttributedString.Key.foregroundColor: NSColor.textColor] as [NSAttributedString.Key: Any])
+            )
             updateCharCountLabel()
         }
     }
-    
+
     @IBOutlet var mainView: NSView!
     @IBOutlet var charCountLabel: NSTextField!
     @IBOutlet var outputTextField: NSTextView!
@@ -46,40 +50,39 @@ class CodeView: NSView {
     @IBOutlet var copyToClipboardButton: NSButton!
     @IBOutlet var previewImage: NSButton!
 
-
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
-    
+
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
-                
+
         registerForDraggedTypes([NSPasteboard.PasteboardType(kUTTypeFileURL as String),
                                  NSPasteboard.PasteboardType(kUTTypeItem as String)])
     }
-    
+
     // MARK: - Action handler
     @objc func selectChanged() {
         self.delegate?.selectChanged()
     }
-    
+
     @objc func checkboxClicked() {
-        self.delegate?.checkboxClicked()        
+        self.delegate?.checkboxClicked()
     }
-    
+
     @IBAction func copyToClipboardClicked(_ sender: NSButton) {
         if let content = base64code {
             content.copyToClipboard()
         }
-        
+
         if self.delegate?.copiedToClipboard != nil {
             self.delegate?.copiedToClipboard!()
         }
     }
-    
+
     @IBAction func onDoneButtonClicked(_ sender: NSButton) {
         self.delegate?.doneButtonClicked()
     }
@@ -92,7 +95,7 @@ class CodeView: NSView {
     func clearTextview() {
         self.outputTextField.textStorage?.mutableString.setString("")
     }
-    
+
     func setTextview(with: String) {
         base64code = with
     }
@@ -100,7 +103,7 @@ class CodeView: NSView {
     func setImage(with image: NSImage) {
         previewImage.image = image
     }
-    
+
     func updateViewControls(isError: Bool, isSvg: Bool = false) {
         if isError {
             outputTextField.isHidden = true
@@ -114,9 +117,9 @@ class CodeView: NSView {
             checkboxDataUrl.isEnabled = true
             selectFileType.isEnabled = true
         }
-        
+
         if let menuitem = selectFileType.menu?.item(withTitle: "image/svg+xml") {
-            menuitem.isHidden = !isSvg            
+            menuitem.isHidden = !isSvg
         }
     }
 
@@ -125,12 +128,12 @@ class CodeView: NSView {
 
         addSubview(view)
     }
-    
+
     func selectAllText() {
         outputTextField.window?.makeFirstResponder(outputTextField)
         outputTextField.selectAll(nil)
     }
- 
+
     // MARK: - Private methods
     private func setup() {
         let bundle = Bundle(for: type(of: self))
@@ -138,17 +141,17 @@ class CodeView: NSView {
         nib.instantiate(withOwner: self, topLevelObjects: nil)
 
         addSubview(mainView)
-        
+
         selectFileType.target = self
         selectFileType.action = #selector(selectChanged)
-        
+
         checkboxDataUrl.target = self
         checkboxDataUrl.action = #selector(checkboxClicked)
-        
+
         outputTextField.isEditable = false
         outputTextField.isHidden = true
     }
-    
+
     private func updateCharCountLabel() {
         if let content = self.base64code {
             charCountLabel.stringValue = "\(content.count) bytes | \(content.count / 1024) kB"

@@ -12,8 +12,8 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
-    func applicationDidFinishLaunching(_ aNotification: Notification) {        
+
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -25,9 +25,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func application(_ sender: NSApplication, openFile filename: String) -> Bool {
-        let nc = NotificationCenter.default
-        nc.post(name: AppGlobals.kNotification, object: filename)        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.post(name: AppGlobals.kNotification, object: filename)
         return true
     }
 }
-

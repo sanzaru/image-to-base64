@@ -11,24 +11,22 @@ import Cocoa
 extension NSImage {
     /// Resize image to given dimensions
     /// - Parameters:
-    ///   - width: Width to resize to
-    ///   - height: Height to resize to
+    ///   - to: CGSize with the desired size
     /// - Returns: The resized image on success or nil on failure
-    func resized(width: CGFloat, height: CGFloat) -> NSImage? {
-        let size = CGSize(width: width, height: height)
+    func resized(to newSize: CGSize) -> NSImage? {
         let newImage = NSImage(size: size)
-        let rectDest = NSMakeRect(0, 0, size.width, size.height)
-        let rectSource = NSMakeRect(0, 0, self.size.width, self.size.height)
-        
+        let rectSource = NSRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
+        let rectDest = NSRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+
         newImage.lockFocus()
         self.draw(in: rectDest, from: rectSource, operation: NSCompositingOperation.sourceOver, fraction: 1)
         newImage.unlockFocus()
-        
-        newImage.size = size
-        
+
+        newImage.size = newSize
+
         return NSImage(data: newImage.tiffRepresentation!)
     }
-    
+
     /// Return base64 string for the image and given type
     /// - Parameter type: The image type to conver to
     /// - Returns: Base64 encoded image data on success or nil on failure
@@ -40,7 +38,7 @@ extension NSImage {
             else {
                 return nil
         }
-        
+
         return "\(data.base64EncodedString())"
     }
 }

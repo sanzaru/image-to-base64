@@ -11,15 +11,15 @@ import Cocoa
 
 enum ImageConverterFileType {
     case jpeg, png, svg
-    
+
     var fileType: NSBitmapImageRep.FileType? {
         switch self {
         case .jpeg:
             return NSBitmapImageRep.FileType.jpeg
-            
+
         case .png:
             return NSBitmapImageRep.FileType.png
-            
+
         case .svg:
             return nil
         }
