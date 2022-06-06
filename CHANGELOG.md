@@ -1,5 +1,8 @@
 #  Changelog
 
+### v.2.3.2
+    - Minor bug- and UI layout fixes
+
 ### v.2.3.1
     - You can now select the code using CMD+A or the edit menu item 
     - Performance and stability improvements
