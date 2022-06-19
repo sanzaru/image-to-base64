@@ -26,19 +26,4 @@ extension NSImage {
 
         return NSImage(data: newImage.tiffRepresentation!)
     }
-
-    /// Return base64 string for the image and given type
-    /// - Parameter type: The image type to conver to
-    /// - Returns: Base64 encoded image data on success or nil on failure
-    func base64String(from type: ImageConverterFileType) -> String? {
-        guard
-            let bits = self.representations.first as? NSBitmapImageRep,
-            let format = type.fileType,
-            let data = bits.representation(using: format, properties: [:])
-            else {
-                return nil
-        }
-
-        return "\(data.base64EncodedString())"
-    }
 }

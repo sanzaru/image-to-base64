@@ -8,18 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		680BADCA23A4E6A700517FE2 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680BADC923A4E6A700517FE2 /* CodeView.swift */; };
-		680D8265232AD3A6009BDCC3 /* ImageConverterFileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680D8264232AD3A6009BDCC3 /* ImageConverterFileType.swift */; };
-		6831198523AAAF4800235539 /* CodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6831198423AAAF4800235539 /* CodeModel.swift */; };
 		683E7EE423A2B2F100EB8AD4 /* CodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 683E7EE323A2B2F100EB8AD4 /* CodeView.xib */; };
 		688337E52353D6E800442754 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688337E42353D6E800442754 /* AppGlobals.swift */; };
 		688A9914284C2A3A005F73B7 /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688A9913284C2A3A005F73B7 /* NSURL.swift */; };
-		688A9917284C36C4005F73B7 /* SVGData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688A9916284C36C4005F73B7 /* SVGData.swift */; };
 		6899B2E623ABDBB800E529DF /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6899B2E523ABDBB800E529DF /* NotificationView.swift */; };
 		6899B2E823AC365600E529DF /* NotificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6899B2E723AC365600E529DF /* NotificationView.xib */; };
 		68ADA4F72617A04E009DDD93 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68ADA4F52617A04E009DDD93 /* ImagePreviewViewController.swift */; };
 		68ADA4F82617A04E009DDD93 /* ImagePreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68ADA4F62617A04E009DDD93 /* ImagePreviewViewController.xib */; };
 		68B5E76528157EFB00C9B12B /* NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5E76428157EFB00C9B12B /* NSImage.swift */; };
 		68B5E7682815827800C9B12B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5E7672815827800C9B12B /* String.swift */; };
+		68D33290285E270000ED65C6 /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3328F285E270000ED65C6 /* ImageConverter.swift */; };
 		68EB5F39231EC9CC008CC8EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EB5F38231EC9CC008CC8EB /* AppDelegate.swift */; };
 		68EB5F3B231EC9CC008CC8EB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EB5F3A231EC9CC008CC8EB /* MainViewController.swift */; };
 		68EB5F3D231ECA0E008CC8EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EB5F3C231ECA0E008CC8EB /* Assets.xcassets */; };
@@ -29,26 +27,22 @@
 		68EE8AD024F55CC00069FB40 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 68EE8ACC24F55CC00069FB40 /* LICENSE */; };
 		68EE8AD124F55CC00069FB40 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 68EE8ACD24F55CC00069FB40 /* CHANGELOG.md */; };
 		68F8A950262609BA003A292C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68F8A952262609BA003A292C /* Localizable.strings */; };
-		68FFBEDB24803C3700D1CF4D /* DimensionFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FFBED924803C3700D1CF4D /* DimensionFormViewController.swift */; };
-		68FFBEDC24803C3700D1CF4D /* DimensionFormViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68FFBEDA24803C3700D1CF4D /* DimensionFormViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		273B154F07159380D658CCDD /* Pods_ImageToBase64.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageToBase64.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		497AF9D01EC6320390B15C75 /* Pods-ImageToBase64.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageToBase64.release.xcconfig"; path = "Target Support Files/Pods-ImageToBase64/Pods-ImageToBase64.release.xcconfig"; sourceTree = "<group>"; };
 		680BADC923A4E6A700517FE2 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
-		680D8264232AD3A6009BDCC3 /* ImageConverterFileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConverterFileType.swift; sourceTree = "<group>"; };
-		6831198423AAAF4800235539 /* CodeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeModel.swift; sourceTree = "<group>"; };
 		683E7EE323A2B2F100EB8AD4 /* CodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CodeView.xib; sourceTree = "<group>"; };
 		688337E42353D6E800442754 /* AppGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGlobals.swift; sourceTree = "<group>"; };
 		688A9913284C2A3A005F73B7 /* NSURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSURL.swift; sourceTree = "<group>"; };
-		688A9916284C36C4005F73B7 /* SVGData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVGData.swift; sourceTree = "<group>"; };
 		6899B2E523ABDBB800E529DF /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
 		6899B2E723AC365600E529DF /* NotificationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationView.xib; sourceTree = "<group>"; };
 		68ADA4F52617A04E009DDD93 /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		68ADA4F62617A04E009DDD93 /* ImagePreviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePreviewViewController.xib; sourceTree = "<group>"; };
 		68B5E76428157EFB00C9B12B /* NSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImage.swift; sourceTree = "<group>"; };
 		68B5E7672815827800C9B12B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		68D3328F285E270000ED65C6 /* ImageConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConverter.swift; sourceTree = "<group>"; };
 		68EB5F35231EC9CC008CC8EB /* ImageToBase64.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageToBase64.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68EB5F38231EC9CC008CC8EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68EB5F3A231EC9CC008CC8EB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -61,8 +55,6 @@
 		68EE8ACC24F55CC00069FB40 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		68EE8ACD24F55CC00069FB40 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
 		68F8A951262609BA003A292C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		68FFBED924803C3700D1CF4D /* DimensionFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionFormViewController.swift; sourceTree = "<group>"; };
-		68FFBEDA24803C3700D1CF4D /* DimensionFormViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DimensionFormViewController.xib; sourceTree = "<group>"; };
 		93B2843DD54A214309E3B34C /* Pods-ImageToBase64.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageToBase64.debug.xcconfig"; path = "Target Support Files/Pods-ImageToBase64/Pods-ImageToBase64.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,15 +105,6 @@
 			path = NotificationView;
 			sourceTree = "<group>";
 		};
-		687B1A1D247AF88900744AD1 /* DimensionFormVIew */ = {
-			isa = PBXGroup;
-			children = (
-				68FFBEDA24803C3700D1CF4D /* DimensionFormViewController.xib */,
-				68FFBED924803C3700D1CF4D /* DimensionFormViewController.swift */,
-			);
-			path = DimensionFormVIew;
-			sourceTree = "<group>";
-		};
 		687B1A24247B1C0D00744AD1 /* MainView */ = {
 			isa = PBXGroup;
 			children = (
@@ -154,9 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				688337E42353D6E800442754 /* AppGlobals.swift */,
-				6831198423AAAF4800235539 /* CodeModel.swift */,
-				680D8264232AD3A6009BDCC3 /* ImageConverterFileType.swift */,
-				688A9916284C36C4005F73B7 /* SVGData.swift */,
+				68D3328F285E270000ED65C6 /* ImageConverter.swift */,
 				6833237424CC654C00D8C8CA /* Extensions */,
 			);
 			path = Shared;
@@ -167,7 +148,6 @@
 			children = (
 				68ADA4F42617A01E009DDD93 /* ImagePreview */,
 				687B1A24247B1C0D00744AD1 /* MainView */,
-				687B1A1D247AF88900744AD1 /* DimensionFormVIew */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -300,7 +280,6 @@
 				68F8A950262609BA003A292C /* Localizable.strings in Resources */,
 				6899B2E823AC365600E529DF /* NotificationView.xib in Resources */,
 				68EB5F40231ECA0E008CC8EB /* Main.storyboard in Resources */,
-				68FFBEDC24803C3700D1CF4D /* DimensionFormViewController.xib in Resources */,
 				68EE8AD024F55CC00069FB40 /* LICENSE in Resources */,
 				68EE8ACB24F539EE0069FB40 /* README.md in Resources */,
 				683E7EE423A2B2F100EB8AD4 /* CodeView.xib in Resources */,
@@ -345,7 +324,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint --fix\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		D255AFA0B7C00F950FDF30DB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -400,12 +379,9 @@
 				680BADCA23A4E6A700517FE2 /* CodeView.swift in Sources */,
 				68B5E7682815827800C9B12B /* String.swift in Sources */,
 				68ADA4F72617A04E009DDD93 /* ImagePreviewViewController.swift in Sources */,
-				680D8265232AD3A6009BDCC3 /* ImageConverterFileType.swift in Sources */,
-				6831198523AAAF4800235539 /* CodeModel.swift in Sources */,
 				68B5E76528157EFB00C9B12B /* NSImage.swift in Sources */,
-				68FFBEDB24803C3700D1CF4D /* DimensionFormViewController.swift in Sources */,
+				68D33290285E270000ED65C6 /* ImageConverter.swift in Sources */,
 				68EB5F49231EDE9B008CC8EB /* DragView.swift in Sources */,
-				688A9917284C36C4005F73B7 /* SVGData.swift in Sources */,
 				6899B2E623ABDBB800E529DF /* NotificationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

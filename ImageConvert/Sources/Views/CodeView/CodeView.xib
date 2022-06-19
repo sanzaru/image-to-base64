@@ -35,7 +35,7 @@
                                     <subviews>
                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Guq-aR-ufO" userLabel="DoneButton">
                                             <rect key="frame" x="-7" y="-2" width="40" height="32"/>
-                                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSGoBackTemplate" imagePosition="overlaps" alignment="right" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ycl-oo-Gah">
+                                            <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSGoBackTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ycl-oo-Gah">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="system"/>
                                             </buttonCell>
@@ -122,19 +122,32 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NMm-uf-Un3">
-                                                            <rect key="frame" x="59" y="18" width="194" height="18"/>
+                                                            <rect key="frame" x="59" y="18" width="335" height="18"/>
                                                             <buttonCell key="cell" type="check" title="Use for data URL" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" inset="2" id="05G-sd-jOc">
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
                                                         </button>
-                                                        <stackView distribution="fill" orientation="horizontal" alignment="bottom" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cfc-Dc-URq">
-                                                            <rect key="frame" x="263" y="17" width="303" height="20"/>
+                                                        <stackView autoresizesSubviews="NO" distribution="fillProportionally" orientation="horizontal" alignment="centerY" spacing="10" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cfc-Dc-URq">
+                                                            <rect key="frame" x="404" y="16" width="162" height="21"/>
                                                             <subviews>
-                                                                <popUpButton verticalHuggingPriority="750" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hTl-b6-MqE">
-                                                                    <rect key="frame" x="-3" y="-4" width="134" height="25"/>
+                                                                <button autoresizesSubviews="NO" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y9R-II-5rD">
+                                                                    <rect key="frame" x="-7" y="-6" width="66" height="32"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="127" id="LuD-Gv-vxg"/>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="52" id="hBc-Nw-n3Y"/>
+                                                                    </constraints>
+                                                                    <buttonCell key="cell" type="push" title="Copy" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="axesIndependently" inset="2" id="dyS-O1-IPd">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="copyToClipboardClicked:" target="-2" id="DSK-ZX-icy"/>
+                                                                    </connections>
+                                                                </button>
+                                                                <popUpButton verticalHuggingPriority="750" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hTl-b6-MqE">
+                                                                    <rect key="frame" x="59" y="-3" width="107" height="25"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="100" id="LuD-Gv-vxg"/>
                                                                     </constraints>
                                                                     <popUpButtonCell key="cell" type="push" title="image/jpg" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" selectedItem="vym-wj-9TX" id="h42-8o-PcW">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -148,19 +161,6 @@
                                                                         </menu>
                                                                     </popUpButtonCell>
                                                                 </popUpButton>
-                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y9R-II-5rD">
-                                                                    <rect key="frame" x="140" y="-7" width="170" height="32"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="156" id="1kI-G3-Bp2"/>
-                                                                    </constraints>
-                                                                    <buttonCell key="cell" type="push" title="Copy to clipboard" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="dyS-O1-IPd">
-                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                        <font key="font" metaFont="system"/>
-                                                                    </buttonCell>
-                                                                    <connections>
-                                                                        <action selector="copyToClipboardClicked:" target="-2" id="DSK-ZX-icy"/>
-                                                                    </connections>
-                                                                </button>
                                                             </subviews>
                                                             <visibilityPriorities>
                                                                 <integer value="1000"/>
@@ -173,7 +173,7 @@
                                                         </stackView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="TuC-lc-k7F" firstAttribute="baseline" secondItem="NMm-uf-Un3" secondAttribute="baseline" id="KN6-hY-h0a"/>
+                                                        <constraint firstItem="Cfc-Dc-URq" firstAttribute="top" secondItem="yeq-7X-13S" secondAttribute="top" constant="16" id="70z-6L-BwJ"/>
                                                     </constraints>
                                                     <visibilityPriorities>
                                                         <integer value="1000"/>

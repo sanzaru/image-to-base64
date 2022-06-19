@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView distribution="equalSpacing" orientation="horizontal" alignment="centerY" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHA-Im-TfG">
-                                <rect key="frame" x="16" y="14" width="368" height="20"/>
+                                <rect key="frame" x="20" y="14" width="360" height="20"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="cso-fK-xc0">
                                         <rect key="frame" x="-2" y="2" width="41" height="16"/>
@@ -36,7 +36,7 @@
                                         </textFieldCell>
                                     </textField>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aEc-NU-TmV">
-                                        <rect key="frame" x="345" y="-3" width="26" height="26"/>
+                                        <rect key="frame" x="337" y="-3" width="26" height="26"/>
                                         <buttonCell key="cell" type="round" bezelStyle="circular" image="NSStopProgressTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lRq-OH-04C">
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                                             <font key="font" metaFont="system"/>
@@ -57,13 +57,13 @@
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="bHA-Im-TfG" secondAttribute="trailing" constant="16" symbolic="YES" id="3qm-yA-bWT"/>
+                            <constraint firstAttribute="trailing" secondItem="bHA-Im-TfG" secondAttribute="trailing" constant="20" symbolic="YES" id="3qm-yA-bWT"/>
                             <constraint firstItem="bHA-Im-TfG" firstAttribute="centerY" secondItem="kU2-gX-70V" secondAttribute="centerY" id="KM6-xy-jM0"/>
-                            <constraint firstItem="bHA-Im-TfG" firstAttribute="leading" secondItem="kU2-gX-70V" secondAttribute="leading" constant="16" symbolic="YES" id="jbv-Rt-w7Z"/>
+                            <constraint firstItem="bHA-Im-TfG" firstAttribute="leading" secondItem="kU2-gX-70V" secondAttribute="leading" constant="20" symbolic="YES" id="jbv-Rt-w7Z"/>
                         </constraints>
                     </view>
                     <color key="borderColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                    <color key="fillColor" red="0.040385981152909922" green="0.62703127601910835" blue="1" alpha="0.32249763943501658" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="fillColor" name="quaternaryLabelColor" catalog="System" colorSpace="catalog"/>
                 </box>
             </subviews>
             <constraints>

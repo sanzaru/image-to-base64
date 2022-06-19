@@ -89,7 +89,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController showSeguePresentationStyle="single" id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="ImageToBase64" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
+                    <window key="window" title="ImageToBase64" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <rect key="contentRect" x="196" y="240" width="606" height="538"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -126,7 +126,7 @@
                                                     <constraint firstAttribute="width" constant="400" id="0bv-FT-tYj"/>
                                                     <constraint firstAttribute="width" secondItem="r9n-Md-0Mb" secondAttribute="height" multiplier="750:643" id="mdz-SR-dvo"/>
                                                 </constraints>
-                                                <imageCell key="cell" refusesFirstResponder="YES" focusRingType="none" alignment="left" imageScaling="proportionallyDown" image="DropIcon" id="ApT-Pa-d6F"/>
+                                                <imageCell key="cell" refusesFirstResponder="YES" focusRingType="none" alignment="left" imageScaling="proportionallyUpOrDown" image="DropIcon" id="ApT-Pa-d6F"/>
                                             </imageView>
                                             <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="n6U-9t-KEu">
                                                 <rect key="frame" x="68" y="0.0" width="265" height="33"/>
@@ -185,7 +185,7 @@
                     </constraints>
                 </customView>
             </objects>
-            <point key="canvasLocation" x="44" y="843"/>
+            <point key="canvasLocation" x="44" y="773"/>
         </scene>
     </scenes>
     <resources>

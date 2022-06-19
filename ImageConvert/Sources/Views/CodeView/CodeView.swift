@@ -25,22 +25,7 @@ class CodeView: NSView {
 
     var selectedFileType: String? { selectFileType.titleOfSelectedItem }
 
-    var content: String { base64code ?? "" }
-
     var checkboxState: NSControl.StateValue { checkboxDataUrl.state }
-
-    // swiftlint:disable line_length
-    private var base64code: String? {
-        didSet {
-            clearTextview()
-            outputTextField.textStorage?.append(
-                NSAttributedString(
-                    string: base64code!,
-                    attributes: [NSAttributedString.Key.foregroundColor: NSColor.textColor] as [NSAttributedString.Key: Any])
-            )
-            updateCharCountLabel()
-        }
-    }
 
     @IBOutlet var mainView: NSView!
     @IBOutlet var charCountLabel: NSTextField!
@@ -59,9 +44,6 @@ class CodeView: NSView {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
-
-        registerForDraggedTypes([NSPasteboard.PasteboardType(kUTTypeFileURL as String),
-                                 NSPasteboard.PasteboardType(kUTTypeItem as String)])
     }
 
     // MARK: - Action handler
@@ -74,21 +56,16 @@ class CodeView: NSView {
     }
 
     @IBAction func copyToClipboardClicked(_ sender: NSButton) {
-        if let content = base64code {
-            content.copyToClipboard()
-        }
-
-        if self.delegate?.copiedToClipboard != nil {
-            self.delegate?.copiedToClipboard!()
-        }
+        outputTextField.string.copyToClipboard()
+        delegate?.copiedToClipboard!()
     }
 
     @IBAction func onDoneButtonClicked(_ sender: NSButton) {
-        self.delegate?.doneButtonClicked()
+        delegate?.doneButtonClicked()
     }
 
     @IBAction func onPreviewClick(_ sender: Any) {
-        self.delegate?.onShowPreview()
+        delegate?.onShowPreview()
     }
 
     // MARK: - Public methods
@@ -96,8 +73,10 @@ class CodeView: NSView {
         self.outputTextField.textStorage?.mutableString.setString("")
     }
 
-    func setTextview(with: String) {
-        base64code = with
+    func setTextview(with content: String) {
+        clearTextview()
+        outputTextField.string = content
+        updateCharCountLabel()
     }
 
     func setImage(with image: NSImage) {
@@ -105,18 +84,11 @@ class CodeView: NSView {
     }
 
     func updateViewControls(isError: Bool, isSvg: Bool = false) {
-        if isError {
-            outputTextField.isHidden = true
-            charCountLabel.isHidden = true
-            copyToClipboardButton.isEnabled = false
-            checkboxDataUrl.isEnabled = false
-            selectFileType.isEnabled = false
-        } else {
-            outputTextField.isHidden = false
-            copyToClipboardButton.isEnabled = true
-            checkboxDataUrl.isEnabled = true
-            selectFileType.isEnabled = true
-        }
+        outputTextField.isHidden = isError
+        charCountLabel.isHidden = isError
+        copyToClipboardButton.isEnabled = !isError
+        checkboxDataUrl.isEnabled = !isError
+        selectFileType.isEnabled = !isError
 
         if let menuitem = selectFileType.menu?.item(withTitle: "image/svg+xml") {
             menuitem.isHidden = !isSvg
@@ -125,7 +97,6 @@ class CodeView: NSView {
 
     func showImageModal() {
         let view = NSView()
-
         addSubview(view)
     }
 
@@ -140,8 +111,6 @@ class CodeView: NSView {
         let nib = NSNib(nibNamed: .init(String(describing: type(of: self))), bundle: bundle)!
         nib.instantiate(withOwner: self, topLevelObjects: nil)
 
-        addSubview(mainView)
-
         selectFileType.target = self
         selectFileType.action = #selector(selectChanged)
 
@@ -150,11 +119,12 @@ class CodeView: NSView {
 
         outputTextField.isEditable = false
         outputTextField.isHidden = true
+
+        addSubview(mainView)
     }
 
     private func updateCharCountLabel() {
-        if let content = self.base64code {
-            charCountLabel.stringValue = "\(content.count) bytes | \(content.count / 1024) kB"
-        }
+        let content = outputTextField.string
+        charCountLabel.stringValue = "\(content.count) \("label.bytes".localized) | \(content.count / 1024) kB"
     }
 }

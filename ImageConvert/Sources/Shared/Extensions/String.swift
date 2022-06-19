@@ -15,3 +15,7 @@ extension String {
         pasteBoard.setString(self, forType: .string)
     }
 }
+
+extension String {
+    var localized: String { NSLocalizedString(self, comment: "") }
+}
