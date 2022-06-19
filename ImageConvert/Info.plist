@@ -15,9 +15,13 @@
 			<string>Default</string>
 			<key>LSItemContentTypes</key>
 			<array>
+				<string>public.image</string>
+				<string>public.bmp</string>
+				<string>public.tiff</string>
 				<string>public.png</string>
 				<string>public.jpeg</string>
-				<string>public.svg</string>
+				<string>public.svg-image</string>
+				<string>public.heif-standard</string>
 			</array>
 		</dict>
 	</array>
@@ -36,7 +40,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>1469</string>
+	<string>1474</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSApplicationCategoryType</key>
@@ -44,7 +48,7 @@
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2020 Martin Albrecht &lt;martin.albrecht@seriousmonkey.de&gt;. All rights reserved.</string>
+	<string>Martin Albrecht &lt;martin.albrecht@seriousmonkey.de&gt;. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
 	<key>NSPrincipalClass</key>

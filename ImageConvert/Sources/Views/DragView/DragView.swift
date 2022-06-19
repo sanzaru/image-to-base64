@@ -20,7 +20,7 @@ protocol DragViewDelegate: AnyObject {
 class DragView: NSView {
     // Properties
     let NSFilenamesPboardType = NSPasteboard.PasteboardType("NSFilenamesPboardType")
-    let allowedFileExtensions = ["jpg", "jpeg", "bmp", "png", "gif", "heic", "svg"]
+    let allowedFileExtensions = ["jpg", "jpeg", "bmp", "png", "gif", "heic", "svg", "tiff", "tif"]
 
     var fileExtensionOkay = false
     var delegate: DragViewDelegate?
