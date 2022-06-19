@@ -127,8 +127,8 @@
 		68ADA4F42617A01E009DDD93 /* ImagePreview */ = {
 			isa = PBXGroup;
 			children = (
-				68ADA4F52617A04E009DDD93 /* ImagePreviewViewController.swift */,
 				68ADA4F62617A04E009DDD93 /* ImagePreviewViewController.xib */,
+				68ADA4F52617A04E009DDD93 /* ImagePreviewViewController.swift */,
 			);
 			path = ImagePreview;
 			sourceTree = "<group>";

@@ -5,6 +5,8 @@
 //  Created by Martin Albrecht on 18.06.22.
 //  Copyright © 2022 Martin Albrecht <martin.albrecht@seriousmonkey.de>. All rights reserved.
 //
+//  Licensed under Apache License v2.0
+//
 
 import Foundation
 import SVGKit
