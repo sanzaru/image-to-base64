@@ -122,17 +122,17 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NMm-uf-Un3">
-                                                            <rect key="frame" x="59" y="18" width="335" height="18"/>
+                                                            <rect key="frame" x="59" y="18" width="306" height="18"/>
                                                             <buttonCell key="cell" type="check" title="Use for data URL" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" inset="2" id="05G-sd-jOc">
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
                                                         </button>
                                                         <stackView autoresizesSubviews="NO" distribution="fillProportionally" orientation="horizontal" alignment="centerY" spacing="10" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cfc-Dc-URq">
-                                                            <rect key="frame" x="404" y="16" width="162" height="21"/>
+                                                            <rect key="frame" x="375" y="16" width="191" height="21"/>
                                                             <subviews>
                                                                 <button autoresizesSubviews="NO" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y9R-II-5rD">
-                                                                    <rect key="frame" x="-7" y="-6" width="66" height="32"/>
+                                                                    <rect key="frame" x="-7" y="-6" width="68" height="32"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="52" id="hBc-Nw-n3Y"/>
                                                                     </constraints>
@@ -145,9 +145,9 @@
                                                                     </connections>
                                                                 </button>
                                                                 <popUpButton verticalHuggingPriority="750" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hTl-b6-MqE">
-                                                                    <rect key="frame" x="59" y="-3" width="107" height="25"/>
+                                                                    <rect key="frame" x="61" y="-3" width="134" height="25"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="100" id="LuD-Gv-vxg"/>
+                                                                        <constraint firstAttribute="width" constant="127" id="LuD-Gv-vxg"/>
                                                                     </constraints>
                                                                     <popUpButtonCell key="cell" type="push" title="image/jpg" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" selectedItem="vym-wj-9TX" id="h42-8o-PcW">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>

@@ -17,6 +17,8 @@ class NotificationView: NSView {
 
     @IBInspectable var backgroundColor: NSColor = .systemBlue
 
+    private var timer: Timer?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -30,11 +32,13 @@ class NotificationView: NSView {
     func show(with message: String, duration: Double = 10.0) {
         messageLabel.stringValue = message
 
+        timer?.invalidate()
+
         NSAnimationContext.runAnimationGroup({ context in
             context.duration = 1.0
             self.alphaValue = 0.9
         }, completionHandler: {
-            Timer.scheduledTimer(
+            self.timer = Timer.scheduledTimer(
                 timeInterval: duration,
                 target: self,
                 selector: #selector(self.hide),
@@ -44,22 +48,20 @@ class NotificationView: NSView {
         })
     }
 
-    func close() {
-        self.alphaValue = 0
-    }
-
     @IBAction func closeButtonClicked(_ sender: Any) {
         self.hide()
     }
 
-    // MARK: - Private methods
-    @objc private func hide() {
+    @objc func hide() {
+        timer?.invalidate()
+
         NSAnimationContext.runAnimationGroup({ context in
             context.duration = 1.0
             self.alphaValue = 0
         }, completionHandler: {})
     }
 
+    // MARK: - Private methods
     private func setup() {
         self.alphaValue = 0
 

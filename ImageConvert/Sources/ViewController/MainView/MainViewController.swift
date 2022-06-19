@@ -171,7 +171,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate {
         dragView.isHidden = true
         dragInfoView.isHidden = false
         statusLabel.stringValue = "label.processing".localized
-        notificationView?.close()
+        notificationView?.hide()
 
         DispatchQueue.main.async {
             self.setTextfield()
@@ -212,7 +212,7 @@ extension MainViewController {
         codeView.clearTextview()
         imageConverter = nil
 
-        notificationView?.close()
+        notificationView?.hide()
 
         codeView.isHidden = true
         dragView.isHidden = false
