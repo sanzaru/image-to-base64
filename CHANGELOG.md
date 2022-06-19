@@ -1,5 +1,13 @@
 #  Changelog
 
+### v.2.4.0
+    - Refactored image encoding
+    - Support for TIFF images
+    - All supported image formats can now be dropped on the dock icon
+    - SVG sizes are now automatically fetched from the image
+    - Fixed notification view handling
+    - General performance and stability improvements
+
 ### v.2.3.2
     - Minor bug- and UI layout fixes
 
