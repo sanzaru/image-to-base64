@@ -24,7 +24,7 @@ More information, screenshots, etc. can be found on: [https://imagetobase64.seri
 
 ## 💻 System requirements:
 
-- Mac OS 10.12 or higher
+- Mac OS 10.13 or higher
 
 ## Version
 
