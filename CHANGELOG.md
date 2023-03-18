@@ -1,5 +1,9 @@
 #  Changelog
 
+### v.2.4.1
+    - Updated dependencies
+    - Incremented deployment target to 10.13
+
 ### v.2.4.0
     - Refactored image encoding
     - Support for TIFF images
