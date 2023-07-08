@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:/Users/mbr/Develop/xcode/ImageConvert/ImageToBase64.xcodeproj">
+      location = "self:">
    </FileRef>
 </Workspace>
