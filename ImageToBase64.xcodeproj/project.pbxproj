@@ -212,7 +212,6 @@
 				68EB5F31231EC9CB008CC8EB /* Sources */,
 				68EB5F32231EC9CB008CC8EB /* Frameworks */,
 				68EB5F33231EC9CB008CC8EB /* Resources */,
-				680A01AC23247F86000B87F5 /* Increment Build Number */,
 			);
 			buildRules = (
 			);
@@ -283,24 +282,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		680A01AC23247F86000B87F5 /* Increment Build Number */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Increment Build Number";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "#PLIST=\"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n#PLB=/usr/libexec/PlistBuddy\n#LAST_NUMBER=$($PLB -c \"Print CFBundleVersion\" \"$PLIST\")\n#NEW_VERSION=$(($LAST_NUMBER + 1))\n#$PLB -c \"Set :CFBundleVersion $NEW_VERSION\" \"$PLIST\"\n";
-		};
 		688A9919284C393D005F73B7 /* Swiftlint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -496,7 +477,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1118;
+				CURRENT_PROJECT_VERSION = 1487;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 4TM9NALPC3;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -525,7 +506,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1118;
+				CURRENT_PROJECT_VERSION = 1487;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 4TM9NALPC3;
 				ENABLE_HARDENED_RUNTIME = YES;
