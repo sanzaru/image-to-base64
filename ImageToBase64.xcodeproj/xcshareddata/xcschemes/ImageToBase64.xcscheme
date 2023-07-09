@@ -28,6 +28,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "68B5B7682A5AFA440002B28B"
+               BuildableName = "ImageToBase64-Tests.xctest"
+               BlueprintName = "ImageToBase64-Tests"
+               ReferencedContainer = "container:ImageToBase64.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "68B5B7592A59F5F80002B28B"
+               BuildableName = "ImageToBase64-UITests.xctest"
+               BlueprintName = "ImageToBase64-UITests"
+               ReferencedContainer = "container:ImageToBase64.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
