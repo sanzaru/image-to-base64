@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "MeMoji-Blue-50.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

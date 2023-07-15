@@ -3,12 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		680BADCA23A4E6A700517FE2 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680BADC923A4E6A700517FE2 /* CodeView.swift */; };
 		680EEEF02A58EF810032014A /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 680EEEEF2A58EF810032014A /* SVGKit */; };
+		6816BE302A622A13007125D4 /* TestMockupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6816BE2F2A622A13007125D4 /* TestMockupData.swift */; };
+		6816BE312A622A13007125D4 /* TestMockupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6816BE2F2A622A13007125D4 /* TestMockupData.swift */; };
+		6816BE322A622D17007125D4 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688337E42353D6E800442754 /* AppGlobals.swift */; };
+		6816BE332A622D17007125D4 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688337E42353D6E800442754 /* AppGlobals.swift */; };
+		6816BE372A62AE7F007125D4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5E7672815827800C9B12B /* String.swift */; };
 		683E7EE423A2B2F100EB8AD4 /* CodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 683E7EE323A2B2F100EB8AD4 /* CodeView.xib */; };
 		688337E52353D6E800442754 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688337E42353D6E800442754 /* AppGlobals.swift */; };
 		688A9914284C2A3A005F73B7 /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688A9913284C2A3A005F73B7 /* NSURL.swift */; };
@@ -17,11 +22,15 @@
 		68ADA4F72617A04E009DDD93 /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68ADA4F52617A04E009DDD93 /* ImagePreviewViewController.swift */; };
 		68ADA4F82617A04E009DDD93 /* ImagePreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68ADA4F62617A04E009DDD93 /* ImagePreviewViewController.xib */; };
 		68B5B75D2A59F5F80002B28B /* ImageToBase64_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5B75C2A59F5F80002B28B /* ImageToBase64_UITests.swift */; };
-		68B5B75F2A59F5F80002B28B /* ImageToBase64_UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5B75E2A59F5F80002B28B /* ImageToBase64_UITestsLaunchTests.swift */; };
 		68B5B76C2A5AFA440002B28B /* ImageToBase64_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5B76B2A5AFA440002B28B /* ImageToBase64_Tests.swift */; };
-		68B5E76528157EFB00C9B12B /* NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5E76428157EFB00C9B12B /* NSImage.swift */; };
 		68B5E7682815827800C9B12B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5E7672815827800C9B12B /* String.swift */; };
 		68D33290285E270000ED65C6 /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3328F285E270000ED65C6 /* ImageConverter.swift */; };
+		68D982FD2A607A03005EC2FC /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3328F285E270000ED65C6 /* ImageConverter.swift */; };
+		68D982FF2A607AD6005EC2FC /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 68D982FE2A607AD6005EC2FC /* SVGKit */; };
+		68D983022A607B53005EC2FC /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688A9913284C2A3A005F73B7 /* NSURL.swift */; };
+		68D983062A607CA4005EC2FC /* Test-Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D983052A607CA4005EC2FC /* Test-Assets.xcassets */; };
+		68D983072A607CA4005EC2FC /* Test-Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D983052A607CA4005EC2FC /* Test-Assets.xcassets */; };
+		68D983092A607E97005EC2FC /* Test-Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D983052A607CA4005EC2FC /* Test-Assets.xcassets */; };
 		68EB5F39231EC9CC008CC8EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EB5F38231EC9CC008CC8EB /* AppDelegate.swift */; };
 		68EB5F3B231EC9CC008CC8EB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EB5F3A231EC9CC008CC8EB /* MainViewController.swift */; };
 		68EB5F3D231ECA0E008CC8EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68EB5F3C231ECA0E008CC8EB /* Assets.xcassets */; };
@@ -51,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		680BADC923A4E6A700517FE2 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
+		6816BE2F2A622A13007125D4 /* TestMockupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMockupData.swift; sourceTree = "<group>"; };
 		683E7EE323A2B2F100EB8AD4 /* CodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CodeView.xib; sourceTree = "<group>"; };
 		688337E42353D6E800442754 /* AppGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGlobals.swift; sourceTree = "<group>"; };
 		688A9913284C2A3A005F73B7 /* NSURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSURL.swift; sourceTree = "<group>"; };
@@ -60,12 +70,11 @@
 		68ADA4F62617A04E009DDD93 /* ImagePreviewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePreviewViewController.xib; sourceTree = "<group>"; };
 		68B5B75A2A59F5F80002B28B /* ImageToBase64-UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ImageToBase64-UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68B5B75C2A59F5F80002B28B /* ImageToBase64_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageToBase64_UITests.swift; sourceTree = "<group>"; };
-		68B5B75E2A59F5F80002B28B /* ImageToBase64_UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageToBase64_UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		68B5B7692A5AFA440002B28B /* ImageToBase64-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ImageToBase64-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68B5B76B2A5AFA440002B28B /* ImageToBase64_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageToBase64_Tests.swift; sourceTree = "<group>"; };
-		68B5E76428157EFB00C9B12B /* NSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImage.swift; sourceTree = "<group>"; };
 		68B5E7672815827800C9B12B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		68D3328F285E270000ED65C6 /* ImageConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConverter.swift; sourceTree = "<group>"; };
+		68D983052A607CA4005EC2FC /* Test-Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Test-Assets.xcassets"; sourceTree = "<group>"; };
 		68EB5F35231EC9CC008CC8EB /* ImageToBase64.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageToBase64.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68EB5F38231EC9CC008CC8EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68EB5F3A231EC9CC008CC8EB /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68D982FF2A607AD6005EC2FC /* SVGKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +118,6 @@
 		6833237424CC654C00D8C8CA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				68B5E76428157EFB00C9B12B /* NSImage.swift */,
 				68B5E7672815827800C9B12B /* String.swift */,
 				688A9913284C2A3A005F73B7 /* NSURL.swift */,
 			);
@@ -173,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				68B5B75C2A59F5F80002B28B /* ImageToBase64_UITests.swift */,
-				68B5B75E2A59F5F80002B28B /* ImageToBase64_UITestsLaunchTests.swift */,
 			);
 			path = "ImageToBase64-UITests";
 			sourceTree = "<group>";
@@ -205,14 +213,23 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		68D983042A607C81005EC2FC /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				68B5B75B2A59F5F80002B28B /* ImageToBase64-UITests */,
+				68B5B76A2A5AFA440002B28B /* ImageToBase64-Tests */,
+				68D983052A607CA4005EC2FC /* Test-Assets.xcassets */,
+				6816BE2F2A622A13007125D4 /* TestMockupData.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		68EB5F2C231EC9CB008CC8EB = {
 			isa = PBXGroup;
 			children = (
 				68EE8ACA24F539EE0069FB40 /* README.md */,
 				68EE8ACC24F55CC00069FB40 /* LICENSE */,
 				68EB5F37231EC9CC008CC8EB /* ImageConvert */,
-				68B5B75B2A59F5F80002B28B /* ImageToBase64-UITests */,
-				68B5B76A2A5AFA440002B28B /* ImageToBase64-Tests */,
 				68EB5F36231EC9CC008CC8EB /* Products */,
 				9BFEA36A3B94BF2048F58D4B /* Frameworks */,
 			);
@@ -232,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				68EB5F4A231EF31B008CC8EB /* Sources */,
+				68D983042A607C81005EC2FC /* Tests */,
 				68EB5F3C231ECA0E008CC8EB /* Assets.xcassets */,
 				68EB5F41231ECA0E008CC8EB /* Info.plist */,
 				68EB5F42231ECA0E008CC8EB /* ImageConvert.entitlements */,
@@ -293,6 +311,9 @@
 				68B5B7712A5AFA470002B28B /* PBXTargetDependency */,
 			);
 			name = "ImageToBase64-Tests";
+			packageProductDependencies = (
+				68D982FE2A607AD6005EC2FC /* SVGKit */,
+			);
 			productName = "ImageToBase64-Tests";
 			productReference = 68B5B7692A5AFA440002B28B /* ImageToBase64-Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -369,6 +390,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68D983062A607CA4005EC2FC /* Test-Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +398,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68D983072A607CA4005EC2FC /* Test-Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +408,7 @@
 			files = (
 				68EB5F3D231ECA0E008CC8EB /* Assets.xcassets in Resources */,
 				68F8A950262609BA003A292C /* Localizable.strings in Resources */,
+				68D983092A607E97005EC2FC /* Test-Assets.xcassets in Resources */,
 				6899B2E823AC365600E529DF /* NotificationView.xib in Resources */,
 				68EB5F40231ECA0E008CC8EB /* Main.storyboard in Resources */,
 				68EE8AD024F55CC00069FB40 /* LICENSE in Resources */,
@@ -401,7 +425,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68B5B75F2A59F5F80002B28B /* ImageToBase64_UITestsLaunchTests.swift in Sources */,
+				6816BE302A622A13007125D4 /* TestMockupData.swift in Sources */,
+				6816BE322A622D17007125D4 /* AppGlobals.swift in Sources */,
 				68B5B75D2A59F5F80002B28B /* ImageToBase64_UITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +435,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6816BE372A62AE7F007125D4 /* String.swift in Sources */,
+				6816BE312A622A13007125D4 /* TestMockupData.swift in Sources */,
+				68D983022A607B53005EC2FC /* NSURL.swift in Sources */,
+				6816BE332A622D17007125D4 /* AppGlobals.swift in Sources */,
+				68D982FD2A607A03005EC2FC /* ImageConverter.swift in Sources */,
 				68B5B76C2A5AFA440002B28B /* ImageToBase64_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,7 +455,6 @@
 				680BADCA23A4E6A700517FE2 /* CodeView.swift in Sources */,
 				68B5E7682815827800C9B12B /* String.swift in Sources */,
 				68ADA4F72617A04E009DDD93 /* ImagePreviewViewController.swift in Sources */,
-				68B5E76528157EFB00C9B12B /* NSImage.swift in Sources */,
 				68D33290285E270000ED65C6 /* ImageConverter.swift in Sources */,
 				68EB5F49231EDE9B008CC8EB /* DragView.swift in Sources */,
 				6899B2E623ABDBB800E529DF /* NotificationView.swift in Sources */,
@@ -472,7 +501,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1488;
 				DEVELOPMENT_TEAM = 4TM9NALPC3;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -498,7 +527,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1488;
 				DEVELOPMENT_TEAM = 4TM9NALPC3;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -524,7 +553,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1488;
 				DEVELOPMENT_TEAM = 4TM9NALPC3;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -550,7 +579,7 @@
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1488;
 				DEVELOPMENT_TEAM = 4TM9NALPC3;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -705,7 +734,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1487;
+				CURRENT_PROJECT_VERSION = 1488;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 4TM9NALPC3;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -734,7 +763,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1487;
+				CURRENT_PROJECT_VERSION = 1488;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 4TM9NALPC3;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -808,6 +837,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		680EEEEF2A58EF810032014A /* SVGKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 680EEEEE2A58EF810032014A /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKit;
+		};
+		68D982FE2A607AD6005EC2FC /* SVGKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 680EEEEE2A58EF810032014A /* XCRemoteSwiftPackageReference "SVGKit" */;
 			productName = SVGKit;
