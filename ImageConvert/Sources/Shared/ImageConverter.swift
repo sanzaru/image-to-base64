@@ -35,6 +35,16 @@ class ImageConverter {
             }
         }
     }
+}
+
+// MARK: Public methods
+
+extension ImageConverter {
+    func loadImage(from data: Data, fileType: FileType) {
+        self.data = data
+        self.image = NSImage(data: data)
+        self.fileType = fileType
+    }
 
     func loadImage(from url: NSURL) throws {
         if url.isSvg {
@@ -56,7 +66,11 @@ class ImageConverter {
         let code = base64String(for: type) ?? ""
         return forDataUrl ? "data:\(prefix(of: type));base64,\(code)" : code
     }
+}
 
+// MARK: Private methods
+
+extension ImageConverter {
     /// Return base64 string for the image and given type
     /// - Parameter type: The image type to conver to
     /// - Returns: Base64 encoded image data on success or nil on failure
