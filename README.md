@@ -26,10 +26,6 @@ More information, screenshots, etc. can be found on: [https://imagetobase64.seri
 
 - Mac OS 10.13 or higher
 
-## Version
-
-For version information see [CHANGELOG.md](https://github.com/sanzaru/image-to-base64/blob/master/CHANGELOG.md) file.
-
 ## Assets
 
 All assets are made with Gravit Designer: [https://www.designer.io/en/](https://www.designer.io/en/)
