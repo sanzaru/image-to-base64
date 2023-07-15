@@ -15,8 +15,8 @@ class ImageConverter {
     var isSVG: Bool { fileType == .svg }
 
     private(set) var image: NSImage?
+    private(set) var fileType: FileType = .jpeg
 
-    private var fileType: FileType = .jpeg
     private var data: Data?
 
     enum FileType {
@@ -24,16 +24,19 @@ class ImageConverter {
 
         var bitmapImageRep: NSBitmapImageRep.FileType? {
             switch self {
-            case .jpeg:
-                return NSBitmapImageRep.FileType.jpeg
-
-            case .png:
-                return NSBitmapImageRep.FileType.png
-
-            case .svg:
-                return nil
+            case .jpeg: return NSBitmapImageRep.FileType.jpeg
+            case .png: return NSBitmapImageRep.FileType.png
+            case .svg: return nil
             }
         }
+
+        var prefix: String {
+            switch self {
+            case .jpeg: return "image/jpg"
+            case .png: return "image/png"
+            case .svg: return "image/svg+xml"
+            }
+        }        
     }
 }
 
@@ -64,7 +67,7 @@ extension ImageConverter {
 
     func code(forDataUrl: Bool, type: ImageConverter.FileType) -> String {
         let code = base64String(for: type) ?? ""
-        return forDataUrl ? "data:\(prefix(of: type));base64,\(code)" : code
+        return forDataUrl ? "data:\(type.prefix);base64,\(code)" : code
     }
 }
 
@@ -89,19 +92,5 @@ extension ImageConverter {
         }
 
         return "\(data.base64EncodedString())"
-    }
-
-    private func prefix(of type: ImageConverter.FileType) -> String {
-        switch type {
-        case .jpeg:
-            return "image/jpg"
-
-        case .png:
-            return "image/png"
-
-        case .svg:
-            return "image/svg+xml"
-        }
-
     }
 }
