@@ -189,6 +189,16 @@ extension MainViewController {
         copiedToClipboard()
     }
 
+    @IBAction func openFileDialog(_ sender: Any) {
+        let panel = NSOpenPanel()
+        panel.allowsMultipleSelection = false
+        panel.canChooseDirectories = false
+        panel.allowedFileTypes = dragView.allowedFileExtensions
+        if panel.runModal() == .OK, let url = panel.url as? NSURL {
+            processImage(from: url)
+        }
+    }
+
     @IBAction func selectAllText(_ sender: Any) {
         codeView.selectAllText()
     }

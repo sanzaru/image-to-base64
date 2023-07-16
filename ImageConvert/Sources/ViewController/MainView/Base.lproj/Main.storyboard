@@ -56,6 +56,18 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="File" id="LWa-d4-myf">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="File" systemMenu="apple" id="VRy-ue-Ufg">
+                                    <items>
+                                        <menuItem title="Open" keyEquivalent="o" id="iHj-zV-GHp">
+                                            <connections>
+                                                <action selector="openFileDialog:" target="Ady-hI-5gd" id="Jh1-sr-9YB"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Edit" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Edit" systemMenu="apple" id="uQy-DD-JDr">
