@@ -12,10 +12,10 @@
     {
       "identity" : "svgkit",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SVGKit/SVGKit",
+      "location" : "https://github.com/sanzaru/SVGKit",
       "state" : {
-        "revision" : "58152b9f7c85eab239160b36ffdfd364aa43d666",
-        "version" : "3.0.0"
+        "branch" : "3.x",
+        "revision" : "96c330df9627b26c1d3a3eb48a84b4eb5d21d7b3"
       }
     },
     {

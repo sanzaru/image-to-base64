@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		680BADCA23A4E6A700517FE2 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680BADC923A4E6A700517FE2 /* CodeView.swift */; };
-		680EEEF02A58EF810032014A /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 680EEEEF2A58EF810032014A /* SVGKit */; };
 		6816BE302A622A13007125D4 /* TestMockupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6816BE2F2A622A13007125D4 /* TestMockupData.swift */; };
 		6816BE312A622A13007125D4 /* TestMockupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6816BE2F2A622A13007125D4 /* TestMockupData.swift */; };
 		6816BE322A622D17007125D4 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688337E42353D6E800442754 /* AppGlobals.swift */; };
@@ -24,9 +23,9 @@
 		68B5B75D2A59F5F80002B28B /* ImageToBase64_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5B75C2A59F5F80002B28B /* ImageToBase64_UITests.swift */; };
 		68B5B76C2A5AFA440002B28B /* ImageToBase64_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5B76B2A5AFA440002B28B /* ImageToBase64_Tests.swift */; };
 		68B5E7682815827800C9B12B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5E7672815827800C9B12B /* String.swift */; };
+		68BB23822A6D650D00FE0F9B /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 68BB23812A6D650D00FE0F9B /* SVGKit */; };
 		68D33290285E270000ED65C6 /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3328F285E270000ED65C6 /* ImageConverter.swift */; };
 		68D982FD2A607A03005EC2FC /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3328F285E270000ED65C6 /* ImageConverter.swift */; };
-		68D982FF2A607AD6005EC2FC /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 68D982FE2A607AD6005EC2FC /* SVGKit */; };
 		68D983022A607B53005EC2FC /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688A9913284C2A3A005F73B7 /* NSURL.swift */; };
 		68D983062A607CA4005EC2FC /* Test-Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D983052A607CA4005EC2FC /* Test-Assets.xcassets */; };
 		68D983072A607CA4005EC2FC /* Test-Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D983052A607CA4005EC2FC /* Test-Assets.xcassets */; };
@@ -100,7 +99,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68D982FF2A607AD6005EC2FC /* SVGKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				680EEEF02A58EF810032014A /* SVGKit in Frameworks */,
+				68BB23822A6D650D00FE0F9B /* SVGKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,7 +310,6 @@
 			);
 			name = "ImageToBase64-Tests";
 			packageProductDependencies = (
-				68D982FE2A607AD6005EC2FC /* SVGKit */,
 			);
 			productName = "ImageToBase64-Tests";
 			productReference = 68B5B7692A5AFA440002B28B /* ImageToBase64-Tests.xctest */;
@@ -332,7 +329,7 @@
 			);
 			name = ImageToBase64;
 			packageProductDependencies = (
-				680EEEEF2A58EF810032014A /* SVGKit */,
+				68BB23812A6D650D00FE0F9B /* SVGKit */,
 			);
 			productName = ImageConvert;
 			productReference = 68EB5F35231EC9CC008CC8EB /* ImageToBase64.app */;
@@ -372,7 +369,7 @@
 			);
 			mainGroup = 68EB5F2C231EC9CB008CC8EB;
 			packageReferences = (
-				680EEEEE2A58EF810032014A /* XCRemoteSwiftPackageReference "SVGKit" */,
+				68BB23802A6D650D00FE0F9B /* XCRemoteSwiftPackageReference "SVGKit" */,
 			);
 			productRefGroup = 68EB5F36231EC9CC008CC8EB /* Products */;
 			projectDirPath = "";
@@ -825,25 +822,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		680EEEEE2A58EF810032014A /* XCRemoteSwiftPackageReference "SVGKit" */ = {
+		68BB23802A6D650D00FE0F9B /* XCRemoteSwiftPackageReference "SVGKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SVGKit/SVGKit";
+			repositoryURL = "https://github.com/sanzaru/SVGKit";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
+				branch = 3.x;
+				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		680EEEEF2A58EF810032014A /* SVGKit */ = {
+		68BB23812A6D650D00FE0F9B /* SVGKit */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 680EEEEE2A58EF810032014A /* XCRemoteSwiftPackageReference "SVGKit" */;
-			productName = SVGKit;
-		};
-		68D982FE2A607AD6005EC2FC /* SVGKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 680EEEEE2A58EF810032014A /* XCRemoteSwiftPackageReference "SVGKit" */;
+			package = 68BB23802A6D650D00FE0F9B /* XCRemoteSwiftPackageReference "SVGKit" */;
 			productName = SVGKit;
 		};
 /* End XCSwiftPackageProductDependency section */
