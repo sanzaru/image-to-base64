@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -45,14 +44,14 @@
                                         </button>
                                         <button translatesAutoresizingMaskIntoConstraints="NO" id="hFk-bs-ICA">
                                             <rect key="frame" x="492" y="0.0" width="74" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="74" id="Gbk-n5-6H3"/>
-                                                <constraint firstAttribute="height" constant="30" id="uRt-dV-emh"/>
-                                            </constraints>
                                             <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" imagePosition="right" alignment="right" controlSize="small" imageScaling="proportionallyUpOrDown" inset="2" id="fLr-qd-7Hk">
                                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                 <font key="font" metaFont="smallSystem"/>
                                             </buttonCell>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="74" id="Gbk-n5-6H3"/>
+                                                <constraint firstAttribute="height" constant="30" id="uRt-dV-emh"/>
+                                            </constraints>
                                             <connections>
                                                 <action selector="onPreviewClick:" target="-2" id="fpZ-43-5UT"/>
                                             </connections>
@@ -96,7 +95,7 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                     </scroller>
                                 </scrollView>
-                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WKs-9O-I81">
+                                <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="WKs-9O-I81">
                                     <rect key="frame" x="-2" y="63" width="570" height="14"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="0 bytes" id="qdg-1p-sSz">
                                         <font key="font" metaFont="message" size="11"/>
@@ -113,7 +112,7 @@
                                                 <stackView distribution="fill" orientation="horizontal" alignment="centerY" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yeq-7X-13S">
                                                     <rect key="frame" x="0.0" y="0.0" width="566" height="53"/>
                                                     <subviews>
-                                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TuC-lc-k7F">
+                                                        <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TuC-lc-k7F">
                                                             <rect key="frame" x="-2" y="19" width="55" height="16"/>
                                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Options" id="NwA-xM-lCL">
                                                                 <font key="font" metaFont="systemBold"/>
@@ -133,22 +132,19 @@
                                                             <subviews>
                                                                 <button autoresizesSubviews="NO" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y9R-II-5rD">
                                                                     <rect key="frame" x="-7" y="-6" width="68" height="32"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="52" id="hBc-Nw-n3Y"/>
-                                                                    </constraints>
                                                                     <buttonCell key="cell" type="push" title="Copy" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="axesIndependently" inset="2" id="dyS-O1-IPd">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                         <font key="font" metaFont="system"/>
                                                                     </buttonCell>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="52" id="hBc-Nw-n3Y"/>
+                                                                    </constraints>
                                                                     <connections>
                                                                         <action selector="copyToClipboardClicked:" target="-2" id="DSK-ZX-icy"/>
                                                                     </connections>
                                                                 </button>
-                                                                <popUpButton verticalHuggingPriority="750" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hTl-b6-MqE">
+                                                                <popUpButton springLoaded="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hTl-b6-MqE">
                                                                     <rect key="frame" x="61" y="-3" width="134" height="25"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="127" id="LuD-Gv-vxg"/>
-                                                                    </constraints>
                                                                     <popUpButtonCell key="cell" type="push" title="image/jpg" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" selectedItem="vym-wj-9TX" id="h42-8o-PcW">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                         <font key="font" metaFont="menu"/>
@@ -160,6 +156,9 @@
                                                                             </items>
                                                                         </menu>
                                                                     </popUpButtonCell>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="127" id="LuD-Gv-vxg"/>
+                                                                    </constraints>
                                                                 </popUpButton>
                                                             </subviews>
                                                             <visibilityPriorities>
@@ -246,6 +245,6 @@
         </customView>
     </objects>
     <resources>
-        <image name="NSGoBackTemplate" width="10" height="14"/>
+        <image name="NSGoBackTemplate" width="12" height="16"/>
     </resources>
 </document>

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,7 +13,6 @@
 		6816BE322A622D17007125D4 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688337E42353D6E800442754 /* AppGlobals.swift */; };
 		6816BE332A622D17007125D4 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688337E42353D6E800442754 /* AppGlobals.swift */; };
 		6816BE372A62AE7F007125D4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5E7672815827800C9B12B /* String.swift */; };
-		683E7EE423A2B2F100EB8AD4 /* CodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 683E7EE323A2B2F100EB8AD4 /* CodeView.xib */; };
 		688337E52353D6E800442754 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688337E42353D6E800442754 /* AppGlobals.swift */; };
 		688A9914284C2A3A005F73B7 /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688A9913284C2A3A005F73B7 /* NSURL.swift */; };
 		6899B2E623ABDBB800E529DF /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6899B2E523ABDBB800E529DF /* NotificationView.swift */; };
@@ -24,6 +23,14 @@
 		68B5B76C2A5AFA440002B28B /* ImageToBase64_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5B76B2A5AFA440002B28B /* ImageToBase64_Tests.swift */; };
 		68B5E7682815827800C9B12B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5E7672815827800C9B12B /* String.swift */; };
 		68BB23822A6D650D00FE0F9B /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 68BB23812A6D650D00FE0F9B /* SVGKit */; };
+		68CC87C52B5084EB006E003E /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 68CC87C42B5084EB006E003E /* Localizable.xcstrings */; };
+		68CC87C72B50861B006E003E /* CodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68CC87C92B50861B006E003E /* CodeView.xib */; };
+		68CC87CB2B5086A0006E003E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68EB5F3E231ECA0E008CC8EB /* Main.storyboard */; };
+		68CC87CC2B5086A1006E003E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68EB5F3E231ECA0E008CC8EB /* Main.storyboard */; };
+		68CC87CD2B5086BA006E003E /* ImagePreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68ADA4F62617A04E009DDD93 /* ImagePreviewViewController.xib */; };
+		68CC87CE2B5086BB006E003E /* ImagePreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68ADA4F62617A04E009DDD93 /* ImagePreviewViewController.xib */; };
+		68CC87CF2B5086EE006E003E /* CodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68CC87C92B50861B006E003E /* CodeView.xib */; };
+		68CC87D02B5086EF006E003E /* CodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68CC87C92B50861B006E003E /* CodeView.xib */; };
 		68D33290285E270000ED65C6 /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3328F285E270000ED65C6 /* ImageConverter.swift */; };
 		68D982FD2A607A03005EC2FC /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3328F285E270000ED65C6 /* ImageConverter.swift */; };
 		68D983022A607B53005EC2FC /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688A9913284C2A3A005F73B7 /* NSURL.swift */; };
@@ -37,7 +44,6 @@
 		68EB5F49231EDE9B008CC8EB /* DragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68EB5F48231EDE9B008CC8EB /* DragView.swift */; };
 		68EE8ACB24F539EE0069FB40 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 68EE8ACA24F539EE0069FB40 /* README.md */; };
 		68EE8AD024F55CC00069FB40 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 68EE8ACC24F55CC00069FB40 /* LICENSE */; };
-		68F8A950262609BA003A292C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 68F8A952262609BA003A292C /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +66,6 @@
 /* Begin PBXFileReference section */
 		680BADC923A4E6A700517FE2 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		6816BE2F2A622A13007125D4 /* TestMockupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMockupData.swift; sourceTree = "<group>"; };
-		683E7EE323A2B2F100EB8AD4 /* CodeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CodeView.xib; sourceTree = "<group>"; };
 		688337E42353D6E800442754 /* AppGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGlobals.swift; sourceTree = "<group>"; };
 		688A9913284C2A3A005F73B7 /* NSURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSURL.swift; sourceTree = "<group>"; };
 		6899B2E523ABDBB800E529DF /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
@@ -72,6 +77,10 @@
 		68B5B7692A5AFA440002B28B /* ImageToBase64-Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ImageToBase64-Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		68B5B76B2A5AFA440002B28B /* ImageToBase64_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageToBase64_Tests.swift; sourceTree = "<group>"; };
 		68B5E7672815827800C9B12B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		68CC87C42B5084EB006E003E /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		68CC87C62B5084EB006E003E /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/Main.xcstrings; sourceTree = "<group>"; };
+		68CC87C82B50861B006E003E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/CodeView.xib; sourceTree = "<group>"; };
+		68CC87CA2B50861B006E003E /* mul */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = mul; path = mul.lproj/CodeView.xcstrings; sourceTree = "<group>"; };
 		68D3328F285E270000ED65C6 /* ImageConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageConverter.swift; sourceTree = "<group>"; };
 		68D983052A607CA4005EC2FC /* Test-Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Test-Assets.xcassets"; sourceTree = "<group>"; };
 		68EB5F35231EC9CC008CC8EB /* ImageToBase64.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageToBase64.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,7 +93,6 @@
 		68EB5F48231EDE9B008CC8EB /* DragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragView.swift; sourceTree = "<group>"; };
 		68EE8ACA24F539EE0069FB40 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		68EE8ACC24F55CC00069FB40 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		68F8A951262609BA003A292C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +141,7 @@
 		687B1A1A24788B9C00744AD1 /* CodeView */ = {
 			isa = PBXGroup;
 			children = (
-				683E7EE323A2B2F100EB8AD4 /* CodeView.xib */,
+				68CC87C92B50861B006E003E /* CodeView.xib */,
 				680BADC923A4E6A700517FE2 /* CodeView.swift */,
 			);
 			path = CodeView;
@@ -251,7 +259,7 @@
 				68EB5F3C231ECA0E008CC8EB /* Assets.xcassets */,
 				68EB5F41231ECA0E008CC8EB /* Info.plist */,
 				68EB5F42231ECA0E008CC8EB /* ImageConvert.entitlements */,
-				68F8A952262609BA003A292C /* Localizable.strings */,
+				68CC87C42B5084EB006E003E /* Localizable.xcstrings */,
 			);
 			path = ImageConvert;
 			sourceTree = "<group>";
@@ -343,7 +351,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1520;
 				ORGANIZATIONNAME = "Martin Albrecht <martin.albrecht@seriousmonkey.de>";
 				TargetAttributes = {
 					68B5B7592A59F5F80002B28B = {
@@ -366,6 +374,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 68EB5F2C231EC9CB008CC8EB;
 			packageReferences = (
@@ -388,6 +397,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				68D983062A607CA4005EC2FC /* Test-Assets.xcassets in Resources */,
+				68CC87CB2B5086A0006E003E /* Main.storyboard in Resources */,
+				68CC87CD2B5086BA006E003E /* ImagePreviewViewController.xib in Resources */,
+				68CC87CF2B5086EE006E003E /* CodeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,6 +408,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				68D983072A607CA4005EC2FC /* Test-Assets.xcassets in Resources */,
+				68CC87CC2B5086A1006E003E /* Main.storyboard in Resources */,
+				68CC87CE2B5086BB006E003E /* ImagePreviewViewController.xib in Resources */,
+				68CC87D02B5086EF006E003E /* CodeView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,13 +419,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				68EB5F3D231ECA0E008CC8EB /* Assets.xcassets in Resources */,
-				68F8A950262609BA003A292C /* Localizable.strings in Resources */,
 				68D983092A607E97005EC2FC /* Test-Assets.xcassets in Resources */,
 				6899B2E823AC365600E529DF /* NotificationView.xib in Resources */,
 				68EB5F40231ECA0E008CC8EB /* Main.storyboard in Resources */,
 				68EE8AD024F55CC00069FB40 /* LICENSE in Resources */,
+				68CC87C52B5084EB006E003E /* Localizable.xcstrings in Resources */,
 				68EE8ACB24F539EE0069FB40 /* README.md in Resources */,
-				683E7EE423A2B2F100EB8AD4 /* CodeView.xib in Resources */,
+				68CC87C72B50861B006E003E /* CodeView.xib in Resources */,
 				68ADA4F82617A04E009DDD93 /* ImagePreviewViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -474,20 +489,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		68CC87C92B50861B006E003E /* CodeView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68CC87C82B50861B006E003E /* Base */,
+				68CC87CA2B50861B006E003E /* mul */,
+			);
+			name = CodeView.xib;
+			sourceTree = "<group>";
+		};
 		68EB5F3E231ECA0E008CC8EB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				68EB5F3F231ECA0E008CC8EB /* Base */,
+				68CC87C62B5084EB006E003E /* mul */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		68F8A952262609BA003A292C /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				68F8A951262609BA003A292C /* en */,
-			);
-			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -504,6 +521,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.seriousmonkey.ImageToBase64-UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -530,6 +548,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.seriousmonkey.ImageToBase64-UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -556,6 +575,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.seriousmonkey.ImageToBase64-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -582,6 +602,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.seriousmonkey.ImageToBase64-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -602,6 +623,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -652,6 +674,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -668,6 +691,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -712,6 +736,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -742,11 +767,12 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 2.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.seriousmonkey.imageconvert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -771,11 +797,12 @@
 					"@executable_path/../Frameworks",
 					"@loader_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 2.5.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.seriousmonkey.imageconvert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

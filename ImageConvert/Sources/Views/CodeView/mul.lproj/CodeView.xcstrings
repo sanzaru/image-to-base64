@@ -1,0 +1,132 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "05G-sd-jOc.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Use for data URL\"; ObjectID = \"05G-sd-jOc\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Für Data-URL verwenden"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Use for data URL"
+          }
+        }
+      }
+    },
+    "dyS-O1-IPd.title" : {
+      "comment" : "Class = \"NSButtonCell\"; title = \"Copy\"; ObjectID = \"dyS-O1-IPd\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopieren"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Copy"
+          }
+        }
+      }
+    },
+    "NwA-xM-lCL.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"Options\"; ObjectID = \"NwA-xM-lCL\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Optionen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Options"
+          }
+        }
+      }
+    },
+    "PAF-zB-BJu.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"image/png\"; ObjectID = \"PAF-zB-BJu\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "image/png"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "image/png"
+          }
+        }
+      }
+    },
+    "qdg-1p-sSz.title" : {
+      "comment" : "Class = \"NSTextFieldCell\"; title = \"0 bytes\"; ObjectID = \"qdg-1p-sSz\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0 Bytes"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "0 bytes"
+          }
+        }
+      }
+    },
+    "T4w-68-Xwf.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"image/svg+xml\"; ObjectID = \"T4w-68-Xwf\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "image/svg+xml"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "image/svg+xml"
+          }
+        }
+      }
+    },
+    "vym-wj-9TX.title" : {
+      "comment" : "Class = \"NSMenuItem\"; title = \"image/jpg\"; ObjectID = \"vym-wj-9TX\";",
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "image/jpg"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "image/jpg"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}
