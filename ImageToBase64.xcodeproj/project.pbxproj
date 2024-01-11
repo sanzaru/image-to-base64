@@ -768,7 +768,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				MARKETING_VERSION = 2.5.0;
+				MARKETING_VERSION = 2.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.seriousmonkey.imageconvert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -798,7 +798,7 @@
 					"@loader_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
-				MARKETING_VERSION = 2.5.0;
+				MARKETING_VERSION = 2.6.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.seriousmonkey.imageconvert;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
