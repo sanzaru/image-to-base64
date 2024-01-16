@@ -16,10 +16,6 @@ class ImagePreviewViewController: NSViewController {
     @IBOutlet var closeButton: NSButton!
     @IBOutlet var imagePreview: NSImageView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
     override func viewWillAppear() {
         imagePreview.image = image
     }
