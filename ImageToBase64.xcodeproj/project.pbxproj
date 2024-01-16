@@ -31,6 +31,7 @@
 		68CC87CE2B5086BB006E003E /* ImagePreviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68ADA4F62617A04E009DDD93 /* ImagePreviewViewController.xib */; };
 		68CC87CF2B5086EE006E003E /* CodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68CC87C92B50861B006E003E /* CodeView.xib */; };
 		68CC87D02B5086EF006E003E /* CodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68CC87C92B50861B006E003E /* CodeView.xib */; };
+		68CC87D52B57374A006E003E /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 68CC87D42B57374A006E003E /* SVGKit */; };
 		68D33290285E270000ED65C6 /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3328F285E270000ED65C6 /* ImageConverter.swift */; };
 		68D982FD2A607A03005EC2FC /* ImageConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D3328F285E270000ED65C6 /* ImageConverter.swift */; };
 		68D983022A607B53005EC2FC /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688A9913284C2A3A005F73B7 /* NSURL.swift */; };
@@ -107,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68CC87D52B57374A006E003E /* SVGKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +320,7 @@
 			);
 			name = "ImageToBase64-Tests";
 			packageProductDependencies = (
+				68CC87D42B57374A006E003E /* SVGKit */,
 			);
 			productName = "ImageToBase64-Tests";
 			productReference = 68B5B7692A5AFA440002B28B /* ImageToBase64-Tests.xctest */;
@@ -883,6 +886,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 68CC87D12B573282006E003E /* XCRemoteSwiftPackageReference "SwiftLint" */;
 			productName = "plugin:SwiftLintPlugin";
+		};
+		68CC87D42B57374A006E003E /* SVGKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68BB23802A6D650D00FE0F9B /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
