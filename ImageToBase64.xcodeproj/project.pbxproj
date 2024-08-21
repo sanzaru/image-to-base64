@@ -14,6 +14,8 @@
 		6816BE332A622D17007125D4 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688337E42353D6E800442754 /* AppGlobals.swift */; };
 		6816BE372A62AE7F007125D4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5E7672815827800C9B12B /* String.swift */; };
 		683E7EE423A2B2F100EB8AD4 /* CodeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 683E7EE323A2B2F100EB8AD4 /* CodeView.xib */; };
+		687780CF2C767A6800DBF3C3 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 687780CE2C767A6800DBF3C3 /* SVGKit */; };
+		687780D12C767A6D00DBF3C3 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 687780D02C767A6D00DBF3C3 /* SVGKit */; };
 		688337E52353D6E800442754 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688337E42353D6E800442754 /* AppGlobals.swift */; };
 		688A9914284C2A3A005F73B7 /* NSURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688A9913284C2A3A005F73B7 /* NSURL.swift */; };
 		6899B2E623ABDBB800E529DF /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6899B2E523ABDBB800E529DF /* NotificationView.swift */; };
@@ -92,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				687780CF2C767A6800DBF3C3 /* SVGKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				687780D12C767A6D00DBF3C3 /* SVGKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,6 +295,9 @@
 				68B5B7642A59F5FF0002B28B /* PBXTargetDependency */,
 			);
 			name = "ImageToBase64-UITests";
+			packageProductDependencies = (
+				687780CE2C767A6800DBF3C3 /* SVGKit */,
+			);
 			productName = "ImageToBase64-UITests";
 			productReference = 68B5B75A2A59F5F80002B28B /* ImageToBase64-UITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -310,6 +317,7 @@
 			);
 			name = "ImageToBase64-Tests";
 			packageProductDependencies = (
+				687780D02C767A6D00DBF3C3 /* SVGKit */,
 			);
 			productName = "ImageToBase64-Tests";
 			productReference = 68B5B7692A5AFA440002B28B /* ImageToBase64-Tests.xctest */;
@@ -833,6 +841,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		687780CE2C767A6800DBF3C3 /* SVGKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68BB23802A6D650D00FE0F9B /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKit;
+		};
+		687780D02C767A6D00DBF3C3 /* SVGKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68BB23802A6D650D00FE0F9B /* XCRemoteSwiftPackageReference "SVGKit" */;
+			productName = SVGKit;
+		};
 		68BB23812A6D650D00FE0F9B /* SVGKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 68BB23802A6D650D00FE0F9B /* XCRemoteSwiftPackageReference "SVGKit" */;
