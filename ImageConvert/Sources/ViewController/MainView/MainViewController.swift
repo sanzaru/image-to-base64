@@ -42,7 +42,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate {
 
     private var forDataURL: Bool { codeView.checkboxState == .on }
 
-    private class Error: NSError {
+    private class Error: NSError, @unchecked Sendable{
         init(message: String, code: Int = 0) {
             super.init(domain: "", code: code, userInfo: [NSLocalizedDescriptionKey: message])
         }
