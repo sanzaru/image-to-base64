@@ -36,7 +36,7 @@ class ImageConverter {
             case .png: return "image/png"
             case .svg: return "image/svg+xml"
             }
-        }        
+        }
     }
 }
 

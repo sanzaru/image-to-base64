@@ -127,7 +127,6 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate {
         resetDragViewStatus()
     }
 
-    // swiftlint:disable identifier_name
     /// Set the status label according to given label type
     /// - Parameter to: The type of label to show
     private func setStatusLabel(to: LabelTypes = .none) {

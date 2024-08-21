@@ -36,10 +36,6 @@ class DragView: NSView {
         setup()
     }
 
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-    }
-
     // Private methods
     private func setup() {
         registerForDraggedTypes([NSPasteboard.PasteboardType(kUTTypeFileURL as String),
