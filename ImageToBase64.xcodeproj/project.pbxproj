@@ -13,6 +13,8 @@
 		6816BE322A622D17007125D4 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688337E42353D6E800442754 /* AppGlobals.swift */; };
 		6816BE332A622D17007125D4 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688337E42353D6E800442754 /* AppGlobals.swift */; };
 		6816BE372A62AE7F007125D4 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68B5E7672815827800C9B12B /* String.swift */; };
+		683A92102D8DE89400F52129 /* NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683A920F2D8DE89200F52129 /* NSImage.swift */; };
+		683A92112D8DE89400F52129 /* NSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683A920F2D8DE89200F52129 /* NSImage.swift */; };
 		687780CF2C767A6800DBF3C3 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 687780CE2C767A6800DBF3C3 /* SVGKit */; };
 		687780D12C767A6D00DBF3C3 /* SVGKit in Frameworks */ = {isa = PBXBuildFile; productRef = 687780D02C767A6D00DBF3C3 /* SVGKit */; };
 		688337E52353D6E800442754 /* AppGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688337E42353D6E800442754 /* AppGlobals.swift */; };
@@ -68,6 +70,7 @@
 /* Begin PBXFileReference section */
 		680BADC923A4E6A700517FE2 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		6816BE2F2A622A13007125D4 /* TestMockupData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestMockupData.swift; sourceTree = "<group>"; };
+		683A920F2D8DE89200F52129 /* NSImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSImage.swift; sourceTree = "<group>"; };
 		688337E42353D6E800442754 /* AppGlobals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGlobals.swift; sourceTree = "<group>"; };
 		688A9913284C2A3A005F73B7 /* NSURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSURL.swift; sourceTree = "<group>"; };
 		6899B2E523ABDBB800E529DF /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
@@ -128,6 +131,7 @@
 		6833237424CC654C00D8C8CA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				683A920F2D8DE89200F52129 /* NSImage.swift */,
 				68B5E7672815827800C9B12B /* String.swift */,
 				688A9913284C2A3A005F73B7 /* NSURL.swift */,
 			);
@@ -461,6 +465,7 @@
 				6816BE312A622A13007125D4 /* TestMockupData.swift in Sources */,
 				68D983022A607B53005EC2FC /* NSURL.swift in Sources */,
 				6816BE332A622D17007125D4 /* AppGlobals.swift in Sources */,
+				683A92102D8DE89400F52129 /* NSImage.swift in Sources */,
 				68D982FD2A607A03005EC2FC /* ImageConverter.swift in Sources */,
 				68B5B76C2A5AFA440002B28B /* ImageToBase64_Tests.swift in Sources */,
 			);
@@ -478,6 +483,7 @@
 				68B5E7682815827800C9B12B /* String.swift in Sources */,
 				68ADA4F72617A04E009DDD93 /* ImagePreviewViewController.swift in Sources */,
 				68D33290285E270000ED65C6 /* ImageConverter.swift in Sources */,
+				683A92112D8DE89400F52129 /* NSImage.swift in Sources */,
 				68EB5F49231EDE9B008CC8EB /* DragView.swift in Sources */,
 				6899B2E623ABDBB800E529DF /* NotificationView.swift in Sources */,
 			);
