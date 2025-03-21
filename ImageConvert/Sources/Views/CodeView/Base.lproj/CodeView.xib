@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="22505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="23504" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22505"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23504"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -10,6 +11,7 @@
                 <outlet property="charCountLabel" destination="WKs-9O-I81" id="90Y-Uf-Czq"/>
                 <outlet property="checkboxDataUrl" destination="NMm-uf-Un3" id="hl0-Bm-dtX"/>
                 <outlet property="copyToClipboardButton" destination="y9R-II-5rD" id="SLq-bk-yDQ"/>
+                <outlet property="downloadButton" destination="nMi-bi-MCK" id="Qgz-Gn-w6v"/>
                 <outlet property="mainView" destination="c22-O7-iKe" id="zmO-aB-bUX"/>
                 <outlet property="outputTextField" destination="MN8-iB-xcK" id="7bf-xr-VVS"/>
                 <outlet property="previewImage" destination="hFk-bs-ICA" id="vNR-RW-X1f"/>
@@ -49,7 +51,7 @@
                                                 <font key="font" metaFont="smallSystem"/>
                                             </buttonCell>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="74" id="Gbk-n5-6H3"/>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="Gbk-n5-6H3"/>
                                                 <constraint firstAttribute="height" constant="30" id="uRt-dV-emh"/>
                                             </constraints>
                                             <connections>
@@ -121,17 +123,27 @@
                                                             </textFieldCell>
                                                         </textField>
                                                         <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NMm-uf-Un3">
-                                                            <rect key="frame" x="59" y="18" width="306" height="18"/>
+                                                            <rect key="frame" x="59" y="18" width="203" height="18"/>
                                                             <buttonCell key="cell" type="check" title="Use for data URL" bezelStyle="regularSquare" imagePosition="left" enabled="NO" state="on" inset="2" id="05G-sd-jOc">
                                                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                 <font key="font" metaFont="system"/>
                                                             </buttonCell>
                                                         </button>
                                                         <stackView autoresizesSubviews="NO" distribution="fillProportionally" orientation="horizontal" alignment="centerY" spacing="10" horizontalStackHuggingPriority="250" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cfc-Dc-URq">
-                                                            <rect key="frame" x="375" y="16" width="191" height="21"/>
+                                                            <rect key="frame" x="272" y="16" width="294" height="21"/>
                                                             <subviews>
+                                                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nMi-bi-MCK">
+                                                                    <rect key="frame" x="-7" y="-6" width="107" height="32"/>
+                                                                    <buttonCell key="cell" type="push" title="Save image" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="tbu-D2-ejT">
+                                                                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                                        <font key="font" metaFont="system"/>
+                                                                    </buttonCell>
+                                                                    <connections>
+                                                                        <action selector="onDownloadClick:" target="-2" id="6YX-4M-Qe4"/>
+                                                                    </connections>
+                                                                </button>
                                                                 <button autoresizesSubviews="NO" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="y9R-II-5rD">
-                                                                    <rect key="frame" x="-7" y="-6" width="68" height="32"/>
+                                                                    <rect key="frame" x="96" y="-6" width="68" height="32"/>
                                                                     <buttonCell key="cell" type="push" title="Copy" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="axesIndependently" inset="2" id="dyS-O1-IPd">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                         <font key="font" metaFont="system"/>
@@ -144,10 +156,10 @@
                                                                     </connections>
                                                                 </button>
                                                                 <popUpButton springLoaded="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hTl-b6-MqE">
-                                                                    <rect key="frame" x="61" y="-3" width="134" height="25"/>
+                                                                    <rect key="frame" x="164" y="-3" width="134" height="25"/>
                                                                     <popUpButtonCell key="cell" type="push" title="image/jpg" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" selectedItem="vym-wj-9TX" id="h42-8o-PcW">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                                        <font key="font" metaFont="menu"/>
+                                                                        <font key="font" metaFont="message"/>
                                                                         <menu key="menu" id="kil-Df-cZr">
                                                                             <items>
                                                                                 <menuItem title="image/jpg" state="on" id="vym-wj-9TX"/>
@@ -157,15 +169,17 @@
                                                                         </menu>
                                                                     </popUpButtonCell>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="127" id="LuD-Gv-vxg"/>
+                                                                        <constraint firstAttribute="width" priority="100" constant="127" id="LuD-Gv-vxg"/>
                                                                     </constraints>
                                                                 </popUpButton>
                                                             </subviews>
                                                             <visibilityPriorities>
                                                                 <integer value="1000"/>
                                                                 <integer value="1000"/>
+                                                                <integer value="1000"/>
                                                             </visibilityPriorities>
                                                             <customSpacing>
+                                                                <real value="3.4028234663852886e+38"/>
                                                                 <real value="3.4028234663852886e+38"/>
                                                                 <real value="3.4028234663852886e+38"/>
                                                             </customSpacing>

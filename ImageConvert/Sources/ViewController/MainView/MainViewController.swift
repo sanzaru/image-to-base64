@@ -42,7 +42,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate {
 
     private var forDataURL: Bool { codeView.checkboxState == .on }
 
-    private class Error: NSError, @unchecked Sendable{
+    private class Error: NSError, @unchecked Sendable {
         init(message: String, code: Int = 0) {
             super.init(domain: "", code: code, userInfo: [NSLocalizedDescriptionKey: message])
         }
@@ -102,6 +102,7 @@ class MainViewController: NSViewController, DragViewDelegate, CodeViewDelegate {
     private func processImage(from url: NSURL) {
         /// Reset the status label
         setStatusLabel(to: .none)
+        codeView.setFilename(with: url.deletingPathExtension?.lastPathComponent ?? "Unknown")
 
         do {
             imageConverter = ImageConverter()

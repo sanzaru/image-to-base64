@@ -34,6 +34,23 @@ class CodeView: NSView {
     @IBOutlet var checkboxDataUrl: NSButton!
     @IBOutlet var copyToClipboardButton: NSButton!
     @IBOutlet var previewImage: NSButton!
+    @IBOutlet weak var downloadButton: NSButton!
+
+    private var filename: String = ""
+    private var fileExtension: String {
+        switch selectedFileType {
+        case "image/jpg":
+            return "jpg"
+        case "image/png":
+            return "png"
+        default:
+            return ""
+        }
+    }
+
+    private var imageData: Data? {
+        selectedFileType == "image/jpg" ? previewImage.image?.jpegData() : previewImage.image?.pngData()
+    }
 
     // MARK: - Init
     override init(frame: CGRect) {
@@ -68,6 +85,10 @@ class CodeView: NSView {
         delegate?.onShowPreview()
     }
 
+    @IBAction func onDownloadClick(_ sender: Any) {
+        showSaveDialog()
+    }
+
     // MARK: - Public methods
     func clearTextview() {
         self.outputTextField.textStorage?.mutableString.setString("")
@@ -83,12 +104,18 @@ class CodeView: NSView {
         previewImage.image = image
     }
 
+    func setFilename(with filename: String) {
+        self.filename = filename
+    }
+
     func updateViewControls(isError: Bool, isSvg: Bool = false) {
         outputTextField.isHidden = isError
         charCountLabel.isHidden = isError
         copyToClipboardButton.isEnabled = !isError
         checkboxDataUrl.isEnabled = !isError
         selectFileType.isEnabled = !isError
+
+        downloadButton.isHidden = !isSvg
 
         if let menuitem = selectFileType.menu?.item(withTitle: "image/svg+xml") {
             menuitem.isHidden = !isSvg
@@ -106,6 +133,34 @@ class CodeView: NSView {
     }
 
     // MARK: - Private methods
+    @MainActor
+    private func showSaveDialog() {
+        let savePanel = NSSavePanel()
+        savePanel.title = "Save File"
+        savePanel.nameFieldStringValue = "\(filename).\(fileExtension)"
+        savePanel.isExtensionHidden = false
+        savePanel.allowedContentTypes = [.image]
+
+        savePanel.begin { response in
+            if response == .OK, let url = savePanel.url {
+                self.saveFile(to: url)
+            }
+        }
+    }
+
+    private func saveFile(to url: URL) {
+        guard let data = imageData else {
+            return
+        }
+
+        do {
+            try data.write(to: url)
+            print("File saved to:", url.path)
+        } catch {
+            print("Failed to save file:", error.localizedDescription)
+        }
+    }
+
     private func setup() {
         let bundle = Bundle(for: type(of: self))
         let nib = NSNib(nibNamed: .init(String(describing: type(of: self))), bundle: bundle)!
