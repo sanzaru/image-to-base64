@@ -51,7 +51,7 @@
                                                 <font key="font" metaFont="smallSystem"/>
                                             </buttonCell>
                                             <constraints>
-                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="Gbk-n5-6H3"/>
+                                                <constraint firstAttribute="width" constant="74" id="Gbk-n5-6H3"/>
                                                 <constraint firstAttribute="height" constant="30" id="uRt-dV-emh"/>
                                             </constraints>
                                             <connections>
@@ -155,7 +155,7 @@
                                                                         <action selector="copyToClipboardClicked:" target="-2" id="DSK-ZX-icy"/>
                                                                     </connections>
                                                                 </button>
-                                                                <popUpButton springLoaded="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hTl-b6-MqE">
+                                                                <popUpButton springLoaded="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hTl-b6-MqE">
                                                                     <rect key="frame" x="164" y="-3" width="134" height="25"/>
                                                                     <popUpButtonCell key="cell" type="push" title="image/jpg" bezelStyle="rounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" selectedItem="vym-wj-9TX" id="h42-8o-PcW">
                                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -169,7 +169,7 @@
                                                                         </menu>
                                                                     </popUpButtonCell>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" priority="100" constant="127" id="LuD-Gv-vxg"/>
+                                                                        <constraint firstAttribute="width" constant="127" id="LuD-Gv-vxg"/>
                                                                     </constraints>
                                                                 </popUpButton>
                                                             </subviews>
