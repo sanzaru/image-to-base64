@@ -75,7 +75,7 @@ extension ImageConverter {
 
 extension ImageConverter {
     /// Return base64 string for the image and given type
-    /// - Parameter type: The image type to conver to
+    /// - Parameter type: The image type to convert to
     /// - Returns: Base64 encoded image data on success or nil on failure
     private func base64String(for type: ImageConverter.FileType) -> String? {
         if type == .svg, fileType == .svg {
